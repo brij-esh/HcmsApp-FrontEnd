@@ -1,0 +1,83 @@
+<div class="container">
+    <mat-grid-list cols="3" class="text-center">
+        <mat-grid-tile>
+            <mat-card class="pt-4">
+                <h2>Manage Doctors</h2>
+                <div class="mat-btn">
+                    <button mat-raised-button (click)="addDoctor()">Add Doctor</button>
+                </div>
+                <div class="mat-btn">
+                    <button mat-raised-button (click)="updateDoctor()">
+                        Update Doctor
+                    </button>
+                </div>
+                <div class="mat-btn">
+                    <button mat-raised-button (click)="deleteDoctor()">
+                        Remove Doctor
+                    </button>
+                </div>
+                <div class="mat-btn">
+                    <button mat-raised-button routerLink="/view-doctor">
+                        View Doctor
+                    </button>
+                </div>
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-card class="pt-4">
+                <h2>Manage Pharmacy</h2>
+                <div class="mat-btn">
+                    <button mat-raised-button (click)="addPharmacy()">
+                        Add Pharmacy
+                    </button>
+                </div>
+                <div class="mat-btn">
+                    <button mat-raised-button (click)="updatePharmacy()">
+                        Update Pharmacy
+                    </button>
+                </div>
+                <div class="mat-btn">
+                    <button mat-raised-button (click)="deletePharmacy()">
+                        Remove Pharmacy
+                    </button>
+                </div>
+                <div class="mat-btn">
+                    <button mat-raised-button routerLink="/view-pharmacy">
+                        View Pharmacy
+                    </button>
+                </div>
+            </mat-card>
+        </mat-grid-tile>
+        <form action="" (ngSubmit)="viewSlot()">
+            <mat-grid-tile>
+                <mat-card class="pt-4">
+                    <h2>Manage Slots</h2>
+                    <div class="mat-btn">
+                        <mat-form-field>
+                            <mat-label>Choose Doctor</mat-label>
+                            <mat-select name="doctorId" required [(ngModel)]="doctorId">
+                                <mat-option *ngFor="let doctor of doctorList" [value]="doctor.doctorId">
+                                    {{ doctor.doctorName }} ({{ doctor.specialization }})
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="mat-btn">
+                        <mat-form-field>
+                            <mat-label>Choose Doctor</mat-label>
+                            <input matInput [matDatepicker]="date" [(ngModel)]="slotDate" name="slotDate" />
+                            <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+                            <mat-datepicker #date></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="mat-btn">
+                        <button mat-raised-button>View Slots</button>
+                    </div>
+                </mat-card>
+                <div>{{ doctorId | json }} {{ slotDate | json }}</div>
+            </mat-grid-tile>
+        </form>
+    </mat-grid-list>
+</div>
+<div></div>
+<app-footer-nav-bar></app-footer-nav-bar>
