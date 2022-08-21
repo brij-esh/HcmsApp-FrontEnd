@@ -1,0 +1,22 @@
+
+h2{
+    background-color: teal;
+    color: white;
+    width: 30%;
+    margin: auto;
+    border-radius: 20px;
+}
+button{
+    margin: auto;
+    background-color: teal;
+    color: white;
+    border-radius: 20px;
+}
+.container{
+    height: 85vh;
+    overflow: auto;
+}
+table{
+    width: 90%;
+    margin: auto;
+}

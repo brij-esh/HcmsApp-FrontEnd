@@ -1,0 +1,55 @@
+<div class="container">
+    <div mat-dialog-title class="text-center">Enter Pharmacy Details</div>
+    <mat-grid-list cols="2">
+        <form action="" (ngSubmit)="onSave()" >
+            <div class="form-parent">
+                <div class="form-child">
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Pharmacy Id</mat-label>
+                            <input matInput type="text" name="pharmacyId" placeholder="Enter Pharmacy Id" required [(ngModel)]="pharmacy.pharmacyId">
+                            <mat-hint>Pharmacy id must be unique</mat-hint>
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Pharmacy Name</mat-label>
+                            <input matInput type="text" name="pharmacyName" placeholder="Enter Pharmacy Name" required [(ngModel)]="pharmacy.pharmacyName">
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Pharmacy Owner</mat-label>
+                            <input matInput type="text" name="pharmacyOwner" placeholder="Enter Pharmacy Owner" required [(ngModel)]="pharmacy.pharmacyOwner">
+                        </mat-form-field>
+                    </p>
+                </div>
+                <div class="form-child">
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Pharmacy Phone</mat-label>
+                            <input matInput type="text" name="pharmacyPhone" (keydown)="isNumber($event)" placeholder="Enter Pharmacy Phone" required [(ngModel)]="pharmacy.pharmacyPhone">
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Pharmacy Email</mat-label>
+                            <input matInput type="email" name="pharmacyEmail" placeholder="Enter Pharmacy Email" required [(ngModel)]="pharmacy.pharmacyEmail">
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Pharmacy Password</mat-label>
+                            <input matInput type="password" name="pharmacyPassword" placeholder="Enter Pharmacy Password" required [(ngModel)]="pharmacy.pharmacyPassword">
+                        </mat-form-field>
+                    </p>
+                </div>
+            </div>
+            <div class="container text-center">
+                <button mat-raised-button matDialogClose type="submit">Save</button>
+                <button mat-raised-button matDialogClose color="accent">Cancel</button>
+            </div>
+        </form>
+        <!-- {{pharmacy | json}} -->
+    </mat-grid-list>
+</div>

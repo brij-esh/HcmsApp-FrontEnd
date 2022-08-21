@@ -1,0 +1,13 @@
+.text-center{
+    color: teal;
+}
+.form-parent{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+button{
+    background-color: teal;
+    color: white;
+    margin: 10px;
+}

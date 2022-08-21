@@ -1,0 +1,27 @@
+<div class="container">
+    <div mat-dialog-title class="text-center">Enter Doctor Id</div>
+    <mat-grid-list cols="2">
+        <form action="" (ngSubmit)="onDelete(doctor)">
+            <div class="form-parent">
+                <div class="form-child">
+                    <p>
+                        <mat-form-field>
+                            <mat-label>Choose Doctor</mat-label>
+                            <mat-select [(ngModel)]="doctor" name="doctorId" required>
+                          <mat-option *ngFor="let doctor of doctorList" [value]="doctor">
+                            {{doctor.doctorName}} ({{doctor.specialization}})
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </p>
+                  
+                </div>
+            </div>
+            <div class="container text-center">
+                <button mat-raised-button matDialogClose color="warn" type="submit" >Delete</button>
+                <button mat-raised-button matDialogClose color="accent">Cancel</button>
+            </div>
+        </form>
+        <!-- {{pharmacy | json}} -->
+    </mat-grid-list>
+</div>

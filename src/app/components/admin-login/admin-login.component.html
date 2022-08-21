@@ -1,0 +1,47 @@
+<div class="admin-form">
+    <mat-grid-list cols="2" rowHeight="85vh">
+      <mat-grid-tile>
+        <div class="flex-row">
+          <div class="pt-4">
+            <h1>
+              E-Healthcare <br />
+              Management System
+            </h1>
+          </div>
+          <div class="image">
+            <img height="400px" class="img-fluid" mat-card-image src="../../../assets/hospital.png"
+              alt="Hospital image" />
+          </div>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="flex-row right-child">
+          <div>
+            <h1>Admin Login</h1>
+          </div>
+          <div>
+            <form action="" (ngSubmit)="adminLogin()">
+              <p mt-5>
+                <mat-form-field appearance="outline">
+                  <mat-label>Admin Id</mat-label>
+                  <input type="text" matInput placeholder="Enter admin id" name = "adminId" id="adminId" required [(ngModel)] = "admin.adminId"/>
+                </mat-form-field>
+              </p>
+              <p mb-5>
+                <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input type="password" matInput placeholder="Enter admin password" name = "password" id="password" required [(ngModel)] = "admin.password"  />
+                </mat-form-field>
+              </p>
+  
+              <div class="container" mt-5>
+                <button mat-raised-button type="submit" >Login</button>
+              </div>
+            </form>
+            <!-- {{admin | json}} -->
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  
