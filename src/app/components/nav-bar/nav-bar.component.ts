@@ -10,12 +10,8 @@ export class NavBarComponent implements OnInit {
 
   constructor(public login:AdminService) { }
 
-<<<<<<< HEAD
-  ngOnInit(): void {}
-=======
   ngOnInit(): void {
   }
->>>>>>> d4f2c7b45e76271129a55b4e337cd7f35cdf5383
 
   public logout(){
     this.login.logout();
