@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -17,8 +17,10 @@ export class SlotService {
    }
 
 
-  public getSlotCount(doctorId:string,slotDate:Date):Observable<number>{
-    return this.http.get<number>(`${this.baseUrl}/slot/get-slot-count/${doctorId}/${slotDate}`);
+  public getSlotCount(doctorId:string,slotDate:any):Observable<number>{
+    console.log(slotDate);
+    
+    return this.http.get<number>(`${this.baseUrl}/slot/get-slot-count/${doctorId}?slotDate=${slotDate}`);
   }
 
   public getSlotList():Observable<any>{
