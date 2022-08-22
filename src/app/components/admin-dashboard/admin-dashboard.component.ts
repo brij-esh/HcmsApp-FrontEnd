@@ -108,7 +108,11 @@ deletePharmacy():void{
     }
 
     console.log(this.datePipe.transform(this.slotDate,"yyyy-MM-dd"));
+<<<<<<< HEAD
     this.slotService.getSlotCount(this.doctorId,this.datePipe.transform(this.slotDate,"yyyy-MM-dd")).subscribe(
+=======
+    this.slotService.getSlotCount(this.doctorId,this.slotDate).subscribe(
+>>>>>>> d4f2c7b45e76271129a55b4e337cd7f35cdf5383
       (data)=>{
         console.log(data);
         this.dialog.open(ViewSlotComponent,{
