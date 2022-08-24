@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Doctor } from '../class/doctor';
 
 @Injectable({
   providedIn: 'root'
@@ -41,9 +39,5 @@ export class DoctorService {
     return this.http.delete(`${this.baseUrl}/doctor/delete-doctor/${doctorId}`,{
       responseType:'text'
     });
-  }
-
-  public loginDoctorFromRemote(doctorData:Doctor):Observable<Doctor>{
-    return this.http.post<Doctor>(`${this.baseUrl}/doctor/login`,doctorData)
   }
 }

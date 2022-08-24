@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-footer-nav-bar',
@@ -8,10 +7,9 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class FooterNavBarComponent implements OnInit {
 
-  constructor(public adminService: AdminService) { }
+  constructor() { }
 
   ngOnInit(): void {
-
   }
 
 }

@@ -8,7 +8,6 @@ import { DoctorLoginComponent } from './components/doctor-login/doctor-login.com
 import { HomeComponent } from './components/home/home.component';
 import { PatientLoginComponent } from './components/patient-login/patient-login.component';
 import { PharmacyLoginComponent } from './components/pharmacy-login/pharmacy-login.component';
-import { DoctorDashboardComponent } from './components/doctor-dashboard/doctor-dashboard.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent, pathMatch:'full' },
@@ -18,8 +17,7 @@ const routes: Routes = [
   { path:'doctor-login', component:DoctorLoginComponent},
   { path:'pharmacy-login', component:PharmacyLoginComponent },
   { path: 'view-pharmacy', component:ViewPharmacyComponent},
-  { path: 'view-doctor', component:ViewDoctorComponent},
-  { path: 'doctor-dashboard', component:DoctorDashboardComponent},
+  { path: 'view-doctor', component:ViewDoctorComponent}
 ];
 
 @NgModule({

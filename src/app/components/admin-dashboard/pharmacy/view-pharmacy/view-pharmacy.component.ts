@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AdminService } from 'src/app/services/admin.service';
 import { PharmacyService } from 'src/app/services/pharmacy.service';
 import { AddPharmacyComponent } from '../add-pharmacy/add-pharmacy.component';
 
@@ -17,14 +16,12 @@ export class ViewPharmacyComponent implements OnInit {
   dataSource:any;
   constructor(
     public dialog:MatDialog,
-    private pharmacyService:PharmacyService,
-    private adminService:AdminService
+    private pharmacyService:PharmacyService
     ) { 
       this.getPharmacyList();
     }
 
   ngOnInit(): void {
-    this.adminService.isVisible = true;
   }
 
   addPharmacy():void{

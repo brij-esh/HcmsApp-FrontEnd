@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +7,9 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private adminService:AdminService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.adminService.isVisible = true;
   }
-
-  
 
 }

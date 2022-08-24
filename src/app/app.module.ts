@@ -41,7 +41,6 @@ import { UpdatePharmacyComponent } from './components/admin-dashboard/pharmacy/u
 import { ViewPharmacyComponent } from './components/admin-dashboard/pharmacy/view-pharmacy/view-pharmacy.component';
 import { ViewSlotComponent } from './components/admin-dashboard/view-slot/view-slot.component';
 import { ViewPrescriptionComponent } from './components/patient-login/view-prescription/view-prescription.component';
-import { DoctorDashboardComponent } from './components/doctor-dashboard/doctor-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -63,8 +62,7 @@ import { DoctorDashboardComponent } from './components/doctor-dashboard/doctor-d
     UpdatePharmacyComponent,
     ViewPharmacyComponent,
     ViewSlotComponent,
-    ViewPrescriptionComponent,
-    DoctorDashboardComponent
+    ViewPrescriptionComponent
   ],
   imports: [
     BrowserModule,
