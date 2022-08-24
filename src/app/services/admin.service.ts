@@ -9,7 +9,8 @@ import { Admin } from '../class/admin';
 })
 export class AdminService {
 
-  isLog:boolean=false;
+  isLogin!:boolean;
+  isVisible!:boolean;
   private baseUrl = environment.apiBaseUrl;
   constructor(private httpClient:HttpClient) { }
 
@@ -18,13 +19,8 @@ export class AdminService {
     return this.httpClient.post<Admin>(`${this.baseUrl}/admin/login`,admin);
   }
 
-  isLoggedIn(){
-    return this.isLog;
-  }
-  logout(){
-    this.isLog = false;
-    return this.isLog;
-  }
+
+  
 
 
 }

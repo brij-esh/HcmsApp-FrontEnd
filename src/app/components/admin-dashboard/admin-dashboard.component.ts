@@ -2,8 +2,10 @@ import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDatepicker } from '@angular/material/datepicker';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Doctor } from 'src/app/class/doctor';
 import { Slot } from 'src/app/class/slot';
+import { AdminService } from 'src/app/services/admin.service';
 import { DoctorService } from 'src/app/services/doctor.service';
 import { SlotService } from 'src/app/services/slot.service';
 import Swal from 'sweetalert2';
@@ -35,14 +37,25 @@ export class AdminDashboardComponent implements OnInit {
     private doctorService:DoctorService,
     private slotService:SlotService,
     private datePipe:DatePipe,
+    private adminService:AdminService,
+    private router : Router
     ) { 
       this.getDoctorList();
     }
 
   ngOnInit(): void {
+    this.adminService.isVisible = true;
+    if(this.adminService.isLogin==false){
+      window.stop();
+      this.go();
+    }
   }
 
 
+  go(){
+    this.router.navigate(['/admin-login']);
+    Swal.fire("Logged Out!","You were logged out, Please login again. Thank You", 'warning');
+  }
   
   getDoctorList(){
     this.doctorService.getDoctorList().subscribe(

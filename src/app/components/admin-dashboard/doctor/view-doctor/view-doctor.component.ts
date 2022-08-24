@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AdminService } from 'src/app/services/admin.service';
 import { DoctorService } from 'src/app/services/doctor.service';
 import { AddDoctorComponent } from '../add-doctor/add-doctor.component';
 
@@ -16,7 +17,8 @@ export class ViewDoctorComponent implements OnInit {
   dataSource:any;
   constructor(
     public dialog:MatDialog,
-    public doctorService:DoctorService
+    public doctorService:DoctorService,
+    public adminService:AdminService
     ) { 
       this.getDoctorList();
     }
@@ -35,6 +37,7 @@ export class ViewDoctorComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    this.adminService.isVisible = true;
   }
   addDoctor():void{
     this.dialog.open(AddDoctorComponent,{

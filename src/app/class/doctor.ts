@@ -5,4 +5,6 @@ export class Doctor {
     doctorPassword!:string;
     doctorPhone!:string;
     doctorEmail!:string
+    doctorAddress!:string;
+    doctorImageUrl!:string;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -8,12 +9,29 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(public login:AdminService) { }
+  isVisible!:boolean;
+  isLog!:boolean;
+  constructor(public adminService:AdminService,
+    private router:Router
+    ) { }
 
   ngOnInit(): void {
   }
 
-  public logout(){
-    this.login.logout();
+  go(){
+    this.router.navigate(['/admin-login']);
   }
+
+  login(){
+      this.isLog = true;
+      return this.isLog;
+  }
+  logout(){
+    this.isLog = false;
+    window.localStorage.clear();
+    this.go();
+    console.log(this.isLog);
+    return this.isLog;
+  }
+
 }

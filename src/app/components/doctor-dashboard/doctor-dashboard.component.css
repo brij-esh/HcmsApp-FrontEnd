@@ -1,0 +1,151 @@
+body{
+    height: 100vh;
+   }
+
+   .nav {
+    background: #008080;
+    text-align: center;
+    height: 50px;
+    justify-content: space-between;
+  }
+ 
+  .nav ul {
+    display: inline-flex;
+    list-style: none;
+    color: white;
+  }
+ 
+  .nav ul li {
+    width: 150px;
+    margin: 5px;
+    padding: 7px;
+    font-weight: bold;
+  }
+ 
+  #home {
+    height: 50px;
+    background-color: darkgrey;
+    
+  }
+ 
+  #home:hover {
+    height: 50px;
+    background-color: #8DC3EE;
+  }
+ 
+  ul li a {
+    width: 80px;
+    text-decoration: none;
+    color: black;
+    margin-top: -6px;
+    display: block;
+    padding: 15px 20px;
+    position: relative;
+    top: -6px;
+    padding-right: 30px;
+  }
+ 
+  ul li a:hover {
+    background-color: #8DC3EE;
+    margin-top: -6px;
+    transition: 0.5s;
+    text-transform: initial;
+    height: 50px;
+    padding-left: 10px;
+  }
+ 
+  ul li a:active {
+    background-color: #303d4e;
+  }   
+
+  table {
+    margin: 0 auto;
+    width: 93%;
+    border: none;
+  }
+ 
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+  }
+ 
+  th {
+    background-color: #008080;
+    color: white;
+   
+  }
+ 
+  tr:nth-child(even) {
+    background-color: blanchedalmond;
+  }
+ 
+  tr:nth-child(odd) {
+    background-color: lightyellow;
+  }
+ 
+  td {
+    color: #587291;
+    font-weight: bold;
+  }
+ 
+  td,
+  th {
+    width: 90px;
+  }
+ 
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 20px;
+    padding-top: 3%;
+    margin-top: 4%;
+    text-align: center;
+  }
+ 
+  form{
+    text-align: center;
+  }
+
+  #btn {
+    background-color: #ca7a5b;
+    border: none;
+    color: black;
+    border-radius: 8px;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    top: -5px;
+    /* right: -150%; */
+    left: -5%;
+    
+    }
+ 
+  ::placeholder {
+    color: #587291;
+  }
+  
+  .footer-main {
+    position: fixed;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #008080;
+    height: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: black;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    
+  }   

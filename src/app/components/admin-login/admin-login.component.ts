@@ -12,9 +12,10 @@ import Swal from 'sweetalert2';
 export class AdminLoginComponent implements OnInit {
 
   admin:Admin = new Admin();
-  constructor(private adminservice:AdminService, private router:Router) { }
+  constructor(public adminservice:AdminService, private router:Router) { }
 
   ngOnInit(): void {
+    this.adminservice.isVisible = false;
   }
 
   
@@ -29,7 +30,7 @@ export class AdminLoginComponent implements OnInit {
         console.log("response recieved");
         // alert("Successfully loggedin");
         this.go();
-        this.adminservice.isLog = true;
+        this.adminservice.isLogin = true;
       },
       error=>{
         console.log("Exception occured");

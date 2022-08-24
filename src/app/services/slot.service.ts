@@ -38,4 +38,8 @@ export class SlotService {
     }
     );
   }
+
+  public updateSlot(slotId:String, prescription:String):Observable<any>{
+    return this.http.put<any>(`${this.baseUrl}/slot/update-slot/${slotId}`,prescription);
+  }
 }
