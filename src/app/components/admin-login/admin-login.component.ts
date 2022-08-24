@@ -16,7 +16,6 @@ export class AdminLoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   
   go(){
     this.router.navigate(['/admin-dashboard']);
