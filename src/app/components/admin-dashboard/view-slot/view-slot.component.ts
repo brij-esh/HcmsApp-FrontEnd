@@ -1,7 +1,5 @@
-import { Component, Inject, inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { SlotService } from 'src/app/services/slot.service';
-import { AdminDashboardComponent } from '../admin-dashboard.component';
 
 @Component({
   selector: 'app-view-slot',
