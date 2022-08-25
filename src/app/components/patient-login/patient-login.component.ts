@@ -27,7 +27,7 @@ export class PatientLoginComponent implements OnInit {
   }
 
   getSlot(){
-    this.slotService.getSlot("b11v0").subscribe(
+    this.slotService.getSlot("ram12").subscribe(
       (data)=>{
         this.slot = data;
         console.log(data);
