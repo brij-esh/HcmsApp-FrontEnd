@@ -24,7 +24,7 @@
                                 <mat-option *ngFor="let specialty of specializationList" [value]="specialty">{{specialty}}</mat-option>
                               </mat-select>
                         </mat-form-field>
-                    </p>
+                    </p>cla
                 </div>
                 <div class="form-child">
                     <p>
@@ -35,14 +35,14 @@
                     </p>
                     <p>
                         <mat-form-field appearance="outline">
-                            <mat-label>Doctor Password</mat-label>
-                            <input matInput type="password" name="doctorPassword" placeholder="Enter Doctor Password" required [(ngModel)]="doctor.doctorPassword">
+                            <mat-label>Doctor Phone</mat-label>
+                            <input matInput type="text" name="doctorPhone" (keydown)="isNumber($event)" placeholder="Enter Doctor Phone" required [(ngModel)]="doctor.doctorPhone">
                         </mat-form-field>
                     </p>
                     <p>
                         <mat-form-field appearance="outline">
-                            <mat-label>Doctor Phone</mat-label>
-                            <input matInput type="text" name="doctorPhone" (keydown)="isNumber($event)" placeholder="Enter Doctor Phone" required [(ngModel)]="doctor.doctorPhone">
+                            <mat-label>Doctor Password</mat-label>
+                            <input matInput type="password" name="doctorPassword" placeholder="Enter Doctor Password" required [(ngModel)]="doctor.doctorPassword">
                         </mat-form-field>
                     </p>
                 </div>
