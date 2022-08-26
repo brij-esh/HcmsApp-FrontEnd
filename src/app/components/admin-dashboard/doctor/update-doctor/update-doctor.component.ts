@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class UpdateDoctorComponent implements OnInit {
 
+  specializationList:string[]=["Pathology","Neurology","Pathology","Psychiatry","Pediatrics","Surgery","Anesthesiology","Ophthalmology"];
  
   doctorList:any;
   constructor(public dialogRef:MatDialogRef<UpdateDoctorComponent>,
@@ -44,7 +45,7 @@ export class UpdateDoctorComponent implements OnInit {
 			event.preventDefault();
 		} 
   }
-  onUpdate(doctor:Doctor){
+  onUpdate(){
     if(this.doctor.doctorId=='' || 
     this.doctor.doctorName=='' || 
     this.doctor.specialization=='' ||

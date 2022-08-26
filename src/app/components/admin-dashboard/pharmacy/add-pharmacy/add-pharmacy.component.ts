@@ -43,13 +43,12 @@ export class AddPharmacyComponent implements OnInit {
 		} 
   }
   onSave(){
-    if(this.pharmacy.pharmacyId=='' || 
+    if(
     this.pharmacy.pharmacyName=='' || 
     this.pharmacy.pharmacyOwner=='' ||
     this.pharmacy.pharmacyPassword=='' ||
     this.pharmacy.pharmacyPhone=='' ||
     this.pharmacy.pharmacyEmail=='' ||
-    this.pharmacy.pharmacyId==null || 
     this.pharmacy.pharmacyName==null || 
     this.pharmacy.pharmacyOwner==null ||
     this.pharmacy.pharmacyPassword==null ||
@@ -71,7 +70,7 @@ export class AddPharmacyComponent implements OnInit {
     this.pharmacyService.addPharmacy(this.pharmacy).subscribe(
       data=>{
         console.log(data);
-        Swal.fire('Success!','Pharmacy Details Saved','success');
+        Swal.fire('Success!','Pharmacy Details Saved. Please refer pharmacy list for pharmacy id','success');
         
       },
       error=>{

@@ -36,34 +36,34 @@ export class DeleteDoctorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onDelete(doctor: Doctor) {
+  onDelete() {
     if (this.doctor.doctorId == '' || this.doctor.doctorId == null
     ) {
       Swal.fire('Empty!!', 'Field must not be empty', 'warning');
       return;
     }
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
     for (let doc of this.doctorList) {
       if (doc.doctorId == this.doctor.doctorId) {
         this.doctorService.deleteDoctor(this.doctor.doctorId).subscribe(
           data => {
             console.log(data);
-            Swal.fire({
-              title: 'Are you sure?',
-              text: "You won't be able to revert this!",
-              icon: 'warning',
-              showCancelButton: true,
-              confirmButtonColor: '#3085d6',
-              cancelButtonColor: '#d33',
-              confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-              if (result.isConfirmed) {
-                Swal.fire(
-                  'Deleted!',
-                  'Your file has been deleted.',
-                  'success'
-                )
-              }
-            })
           },
           error => {
             console.log(error);

@@ -10,7 +10,6 @@ import { SlotService } from 'src/app/services/slot.service';
 })
 export class DoctorDashboardComponent implements OnInit {
 
-
   prescription!:string;
   slotList:any;
   slotId!:string;

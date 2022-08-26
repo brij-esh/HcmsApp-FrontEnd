@@ -1,7 +1,7 @@
 <div class="container">
     <div mat-dialog-title class="text-center">Enter Doctor Details</div>
     <mat-grid-list cols="2">
-        <form action="" (ngSubmit)="onUpdate(doctor)" >
+        <form action="" (ngSubmit)="onUpdate()">
             <div class="form-parent">
                 <div class="form-child">
                     <p>
@@ -23,7 +23,10 @@
                     <p>
                         <mat-form-field appearance="outline">
                             <mat-label>Specialization</mat-label>
-                            <input matInput type="text" name="specialization" placeholder="Enter specialization" required [(ngModel)]="doctor.specialization">
+                            <mat-select matNativeControl [(ngModel)]="doctor.specialization" name="specialization" required>
+                                <mat-option>Choose Specialization</mat-option>
+                                <mat-option *ngFor="let specialty of specializationList" [value]="specialty">{{specialty}}</mat-option>
+                              </mat-select>
                         </mat-form-field>
                     </p>
                 </div>

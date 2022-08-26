@@ -12,8 +12,10 @@ import Swal from 'sweetalert2';
 })
 export class AddDoctorComponent implements OnInit {
 
+  specializationList:string[]=["Pathology","Neurology","Pathology","Psychiatry","Pediatrics","Surgery","Anesthesiology","Ophthalmology"];
 
   doctorList!:any;
+
   constructor(public dialogRef:MatDialogRef<AddDoctorComponent>,
     private doctorService:DoctorService,
     ) { 
@@ -23,6 +25,7 @@ export class AddDoctorComponent implements OnInit {
 
     public doctor :Doctor =  new Doctor();
   ngOnInit(): void {
+    this.getDoctorList();
   }
 
 
@@ -30,7 +33,6 @@ export class AddDoctorComponent implements OnInit {
     this.doctorService.getDoctorList().subscribe(
       (data)=>{
         this.doctorList = data;
-        // console.log(data);
         
       },
       (error)=>{
@@ -47,13 +49,11 @@ export class AddDoctorComponent implements OnInit {
   }
 
   onSave(){
-    if(this.doctor.doctorId=='' || 
-    this.doctor.doctorName=='' || 
+    if(this.doctor.doctorName=='' || 
     this.doctor.specialization=='' ||
     this.doctor.doctorPassword=='' ||
     this.doctor.doctorPhone=='' ||
     this.doctor.doctorEmail=='' ||
-    this.doctor.doctorId==null || 
     this.doctor.doctorName==null || 
     this.doctor.specialization==null ||
     this.doctor.doctorPassword==null ||
@@ -72,7 +72,7 @@ export class AddDoctorComponent implements OnInit {
     this.doctorService.addDoctor(this.doctor).subscribe(
       data=>{
         console.log(data);
-        Swal.fire('Success!','Doctor Details Saved','success');
+        Swal.fire('Success!',`${this.doctor.doctorName}'s details saved. For doctor id please refer to doctor list.`,'success',);
         
       },
       error=>{
