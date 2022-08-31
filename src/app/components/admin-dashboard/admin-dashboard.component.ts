@@ -115,7 +115,7 @@ deletePharmacy():void{
     console.log(this.doctorId);
     console.log(this.slotDate);
 
-    if(this.doctorId=='' || this.doctorId == null || this.slotDate ==null){
+    if(this.doctorId =='' || this.doctorId == null || this.slotDate == null){
       Swal.fire("Empty fields!","Fields must not be empty",'warning');
       return;
     }

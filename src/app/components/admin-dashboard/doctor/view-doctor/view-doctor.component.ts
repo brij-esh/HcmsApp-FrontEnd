@@ -14,7 +14,7 @@ export class ViewDoctorComponent implements OnInit {
  
 
   displayedColumns:string[]=['doctorId','doctorName','specialization','doctorPhone','doctorEmail'];
-  dataSource:any;
+  doctorList:any;
   constructor(
     public dialog:MatDialog,
     public doctorService:DoctorService,
@@ -27,7 +27,7 @@ export class ViewDoctorComponent implements OnInit {
       this.doctorService.getDoctorList().subscribe(
         (data)=>{
           console.log(data);
-          this.dataSource = data;
+          this.doctorList = data;
         },
         (error)=>{
           console.log(error);
