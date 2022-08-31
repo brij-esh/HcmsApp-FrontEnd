@@ -9,8 +9,8 @@ import { Admin } from '../class/admin';
 })
 export class AdminService {
 
-  isLogin!:boolean;
-  isVisible!:boolean;
+  isLogin:boolean=true;
+  isVisible:boolean=true;
   private baseUrl = environment.apiBaseUrl;
   constructor(private httpClient:HttpClient) { }
 

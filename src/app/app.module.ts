@@ -31,7 +31,6 @@ import { FooterNavBarComponent } from './components/footer-nav-bar/footer-nav-ba
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { DoctorLoginComponent } from './components/doctor-login/doctor-login.component';
 import { PharmacyLoginComponent } from './components/pharmacy-login/pharmacy-login.component';
-import { PatientLoginComponent } from './components/patient-login/patient-login.component';
 import { AddDoctorComponent } from './components/admin-dashboard/doctor/add-doctor/add-doctor.component';
 import { DeleteDoctorComponent } from './components/admin-dashboard/doctor/delete-doctor/delete-doctor.component';
 import { UpdateDoctorComponent } from './components/admin-dashboard/doctor/update-doctor/update-doctor.component';
@@ -41,13 +40,13 @@ import { DeletePharmacyComponent } from './components/admin-dashboard/pharmacy/d
 import { UpdatePharmacyComponent } from './components/admin-dashboard/pharmacy/update-pharmacy/update-pharmacy.component';
 import { ViewPharmacyComponent } from './components/admin-dashboard/pharmacy/view-pharmacy/view-pharmacy.component';
 import { ViewSlotComponent } from './components/admin-dashboard/view-slot/view-slot.component';
-import { ViewPrescriptionComponent } from './components/patient-login/view-prescription/view-prescription.component';
 import { DoctorDashboardComponent } from './components/doctor-dashboard/doctor-dashboard.component';
 import { UserLoginComponent } from './components/user/user-login/user-login.component';
 import { UserSignupComponent } from './components/user/user-signup/user-signup.component';
 import { UserDashboardComponent } from './components/user/user-dashboard/user-dashboard.component';
 import { SlotBookingComponent } from './components/user/user-dashboard/slot-booking/slot-booking.component';
 import { PaymentComponent } from './components/user/user-dashboard/slot-booking/payment/payment.component';
+import { PharmacyDashboardComponent } from './components/pharmacy-dashboard/pharmacy-dashboard.component';
 
 
 
@@ -61,7 +60,6 @@ import { PaymentComponent } from './components/user/user-dashboard/slot-booking/
     AdminLoginComponent,
     DoctorLoginComponent,
     PharmacyLoginComponent,
-    PatientLoginComponent,
     AddDoctorComponent,
     DeleteDoctorComponent,
     UpdateDoctorComponent,
@@ -71,13 +69,13 @@ import { PaymentComponent } from './components/user/user-dashboard/slot-booking/
     UpdatePharmacyComponent,
     ViewPharmacyComponent,
     ViewSlotComponent,
-    ViewPrescriptionComponent,
     DoctorDashboardComponent,
     UserLoginComponent,
     UserSignupComponent,
     UserDashboardComponent,
     SlotBookingComponent,
     PaymentComponent,
+    PharmacyDashboardComponent,
   ],
   imports: [
     BrowserModule,

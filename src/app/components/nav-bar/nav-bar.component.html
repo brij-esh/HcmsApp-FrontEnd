@@ -1,15 +1,15 @@
 <mat-toolbar *ngIf="adminService.isVisible">
     <div class="container">
-        <span><a mat-icon-button routerLink="/">
+        <span><a mat-icon-button routerLink="/home">
                 <i class="bi bi-house-door"></i>
                 Home
             </a></span>
         <span class="example-spacer"></span>
 
-            <a routerLink="/admin-login" mat-icon-button *ngIf="!adminService.isLogin" (click)="login()">
+            <a mat-icon-button *ngIf="adminService.isLogin" (click)="login()">
                 <i class="bi bi-box-arrow-in-right" ></i>
                 Login</a>
-            <a mat-icon-button *ngIf="adminService.isLogin" (click)="logout()">
+            <a routerLink="/home" mat-icon-button *ngIf="!adminService.isLogin" (click)="logout()">
                 <i class="bi bi-box-arrow-left"></i>
                 Log out</a>
     </div>

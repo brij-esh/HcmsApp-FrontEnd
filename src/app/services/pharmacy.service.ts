@@ -24,6 +24,10 @@ export class PharmacyService {
     )
   }
 
+  public pharmacyLogin(pharmacy:Pharmacy):Observable<Pharmacy>{
+    return this.http.post<Pharmacy>(`${this.baseUrl}/pharmacy/login`,pharmacy);
+  }
+
   public getPharmacydetails():Observable<Pharmacy>{
     return this.http.get<Pharmacy>(`${this.baseUrl}/pharmacy/get-pharmacy-list`);
   }

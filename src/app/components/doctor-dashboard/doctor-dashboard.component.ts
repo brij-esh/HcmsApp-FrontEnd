@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 import { DoctorService } from 'src/app/services/doctor.service';
 import { SlotService } from 'src/app/services/slot.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-doctor-dashboard',
@@ -27,7 +28,17 @@ export class DoctorDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSlotListByDoctorId(this.doctorId);
-    this.adminService.isVisible = false;
+    this.adminService.isVisible = true;
+    if(this.adminService.isLogin==true){
+      window.stop();
+      this.goto();
+    }
+  }
+
+
+  goto(){
+    this.router.navigate(['/home']);
+    Swal.fire("Logged Out!","You were logged out, Please login again. Thank You", 'warning');
   }
 
   go(){
