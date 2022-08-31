@@ -4,4 +4,5 @@ export class Payment {
   cardNo!: String;
   cvv!: number;
   expiry!: String;
+  fees = 400;
 }

@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class AddDoctorComponent implements OnInit {
 
-  specializationList:string[]=["Pathology","Neurology","Pathology","Psychiatry","Pediatrics","Surgery","Anesthesiology","Ophthalmology"];
+  specializationList:string[]=["Pathology","Neurology","Psychiatry","Pediatrics","Surgery","Anesthesiology","Ophthalmology","Dermatology"];
 
   doctorList!:any;
 
@@ -58,7 +58,9 @@ export class AddDoctorComponent implements OnInit {
     this.doctor.specialization==null ||
     this.doctor.doctorPassword==null ||
     this.doctor.doctorPhone==null ||
-    this.doctor.doctorEmail==null
+    this.doctor.doctorEmail==null ||
+    this.doctor.doctorImageUrl == null ||
+    this.doctor.doctorImageUrl == ''
     ){
       Swal.fire('Empty!','Fields must not be empty!','warning');
       return;

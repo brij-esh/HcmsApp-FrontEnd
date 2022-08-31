@@ -10,6 +10,7 @@ import { Doctor } from '../class/doctor';
 export class DoctorService {
 
   doctorList:any;
+  doctorId:any;
   private baseUrl = environment.apiBaseUrl;
   constructor(private http:HttpClient,) { 
     this.getDoctorList().subscribe(
@@ -44,6 +45,7 @@ export class DoctorService {
   }
 
   public loginDoctorFromRemote(doctorData:Doctor):Observable<Doctor>{
+    this.doctorId = doctorData.doctorId;
     return this.http.post<Doctor>(`${this.baseUrl}/doctor/login`,doctorData)
   }
 

@@ -7,11 +7,11 @@
         </mat-form-field>
     </div>
     <div class="container text-center">
-        <mat-grid-list cols="3" rowHeight="1.5:1">
+        <mat-grid-list cols="3" rowHeight="1:1.5">
             <mat-grid-tile *ngFor="let doctor of doctorList | filter:term">
-                <mat-card>
+                <mat-card style="background-color:aquamarine;">
                     <div>
-                        <img src="" width="200" height="200" alt="doctorImage" />
+                        <img src={{doctor?.doctorImageUrl}} width="200" height="200" alt="doctorImage" />
                     </div>
                     <div>
                         <h3>Doctor Name: {{doctor.doctorName}}</h3>

@@ -57,7 +57,9 @@ export class UpdateDoctorComponent implements OnInit {
     this.doctor.specialization==null ||
     this.doctor.doctorPassword==null ||
     this.doctor.doctorPhone==null ||
-    this.doctor.doctorEmail==null
+    this.doctor.doctorEmail==null ||
+    this.doctor.doctorImageUrl == null ||
+    this.doctor.doctorImageUrl == ''
     ){
       Swal.fire('Empty!!', 'Field must not be empty','warning');
       return;

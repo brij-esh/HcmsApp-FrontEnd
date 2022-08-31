@@ -6,12 +6,6 @@
                 <div class="form-child">
                     <p>
                         <mat-form-field appearance="outline">
-                            <mat-label>Doctor Id is auto-generated</mat-label>
-                            <input disabled matInput type="text" name="doctorId">
-                        </mat-form-field>
-                    </p>
-                    <p>
-                        <mat-form-field appearance="outline">
                             <mat-label>Doctor Name</mat-label>
                             <input matInput type="text" name="doctorName" placeholder="Enter Doctor Name" required [(ngModel)]="doctor.doctorName">
                         </mat-form-field>
@@ -24,7 +18,13 @@
                                 <mat-option *ngFor="let specialty of specializationList" [value]="specialty">{{specialty}}</mat-option>
                               </mat-select>
                         </mat-form-field>
-                    </p>cla
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Image</mat-label>
+                            <input matInput type="text" name="doctorImageUrl" required [(ngModel)]="doctor.doctorImageUrl">
+                        </mat-form-field>
+                    </p>
                 </div>
                 <div class="form-child">
                     <p>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
+import { DoctorService } from 'src/app/services/doctor.service';
 import { SlotService } from 'src/app/services/slot.service';
 
 @Component({
@@ -13,13 +14,19 @@ export class DoctorDashboardComponent implements OnInit {
   prescription!:string;
   slotList:any;
   slotId!:string;
+  doctorId!:string;
   constructor(private slotService:SlotService,
     private router : Router,
-    private adminService:AdminService
-    ) {}
+    private adminService:AdminService,
+    private doctorService:DoctorService
+    ) {
+      this.doctorId = this.doctorService.doctorId;
+      console.log(this.doctorId);
+      
+    }
 
   ngOnInit(): void {
-    this.getSlotList();
+    this.getSlotListByDoctorId(this.doctorId);
     this.adminService.isVisible = false;
   }
 
@@ -30,8 +37,8 @@ export class DoctorDashboardComponent implements OnInit {
     this.slotService.updateSlot(this.slotId,this.prescription);
   }
 
-  getSlotList(){
-    this.slotService.getSlotList().subscribe(
+  getSlotListByDoctorId(doctorId:string){
+    this.slotService.getSlotListByDoctorId(doctorId).subscribe(
       (data)=>{
         this.slotList = data;
         console.log(data);
@@ -44,7 +51,22 @@ export class DoctorDashboardComponent implements OnInit {
     )
   }
 
+  // getSlotList(){
+  //   this.slotService.getSlotList().subscribe(
+  //     (data)=>{
+  //       this.slotList = data;
+  //       console.log(data);
+        
+  //     },
+  //     (error)=>{
+  //       console.log(error);
+        
+  //     }
+  //   )
+  // }
+
   displayStyle  = 'none';
+
   openPopup(data:any){
     this.displayStyle = "block";
     this.prescription = data.prescription;

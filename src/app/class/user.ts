@@ -6,5 +6,4 @@ export class User {
 	userPhone!:string;
 	userEmailId!:string;
 	password!:string;
-	user!:any;
 }

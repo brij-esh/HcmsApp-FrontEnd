@@ -14,6 +14,7 @@ export class SlotService {
   public baseUrl = environment.apiBaseUrl;
 
   slots!:number;
+
   constructor(public http:HttpClient) {
   
    }
@@ -44,11 +45,25 @@ export class SlotService {
     );
   }
 
+  public bookDoctor(slotId:string, doctorId:string):Observable<any>{
+    return this.http.put<any>(`${this.baseUrl}/slot/${slotId}/doctor/${doctorId}`,slotId);
+  }
+
+  public bookUser(slotId:string, userId:any):Observable<any>{
+    return this.http.put<any>(`${this.baseUrl}/slot/${slotId}/doctor/${userId}`,slotId);
+  }
+
+
+
   public updateSlot(slotId:string, prescription:string):Observable<any>{
     return this.http.put<any>(`${this.baseUrl}/slot/update-slot/${slotId}`,prescription);
   }
 
   public getSlotListByUserId(userId:number):Observable<any>{
     return this.http.get<any>(`${this.baseUrl}/slot/get-slot-list-by-user-id/${userId}`);
+  }
+
+  public getSlotListByDoctorId(doctorId:any):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/slot/get-slot-list-by-doctor-id/${doctorId}`)
   }
 }

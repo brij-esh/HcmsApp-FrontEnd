@@ -22,7 +22,6 @@ export class UserSignupComponent implements OnInit {
   
   onFormSubmit()
   {
-    this.user.user = 0;
     if(
       this.user.password == null || this.user.password == '' ||
       this.user.userAge ==null ||

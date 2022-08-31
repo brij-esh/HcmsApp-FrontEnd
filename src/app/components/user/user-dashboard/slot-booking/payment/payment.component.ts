@@ -33,8 +33,6 @@ export class PaymentComponent implements OnInit {
     this.slotService.createSlot(this.slot).subscribe(
       (data)=>{
         console.log(data);
-        this.go();
-        this.slot = null;
         Swal.fire("Payment Done!","Your Slot is booked successfully",'success');
       },
       (error)=>{
@@ -53,10 +51,6 @@ export class PaymentComponent implements OnInit {
        alert(error.message);
      }
      );
-    }
-
-    go() {
-      this.router.navigate(['/user-dashboard']);
     }
 
 }
