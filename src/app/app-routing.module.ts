@@ -9,6 +9,10 @@ import { HomeComponent } from './components/home/home.component';
 import { PatientLoginComponent } from './components/patient-login/patient-login.component';
 import { PharmacyLoginComponent } from './components/pharmacy-login/pharmacy-login.component';
 import { DoctorDashboardComponent } from './components/doctor-dashboard/doctor-dashboard.component';
+import { UserLoginComponent } from './components/user/user-login/user-login.component';
+import { UserSignupComponent } from './components/user/user-signup/user-signup.component';
+import { UserDashboardComponent } from './components/user/user-dashboard/user-dashboard.component';
+import { SlotBookingComponent } from './components/user/user-dashboard/slot-booking/slot-booking.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent, pathMatch:'full' },
@@ -17,9 +21,13 @@ const routes: Routes = [
   { path:'patient-login', component:PatientLoginComponent },
   { path:'doctor-login', component:DoctorLoginComponent},
   { path:'pharmacy-login', component:PharmacyLoginComponent },
-  { path: 'view-pharmacy', component:ViewPharmacyComponent},
-  { path: 'view-doctor', component:ViewDoctorComponent},
-  { path: 'doctor-dashboard', component:DoctorDashboardComponent},
+  { path:'view-pharmacy', component:ViewPharmacyComponent},
+  { path:'view-doctor', component:ViewDoctorComponent},
+  { path:'doctor-dashboard', component:DoctorDashboardComponent},
+  { path:'user-login', component:UserLoginComponent},
+  { path:'user-signup', component:UserSignupComponent},
+  { path:'user-dashboard', component:UserDashboardComponent},
+  { path:'slot-booking', component:SlotBookingComponent}
 ];
 
 @NgModule({

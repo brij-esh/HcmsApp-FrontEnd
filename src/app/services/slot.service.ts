@@ -19,6 +19,11 @@ export class SlotService {
    }
 
 
+   public createSlot(slot:Slot):Observable<Slot>{
+    return this.http.post<Slot>(`${this.baseUrl}/slot/create-slot`,slot);
+   }
+
+
   public getSlotCount(doctorId:string,slotDate:any):Observable<number>{
     console.log(slotDate);
     return this.http.get<number>(`${this.baseUrl}/slot/get-slot-count/${doctorId}?slotDate=${slotDate}`);
@@ -39,7 +44,11 @@ export class SlotService {
     );
   }
 
-  public updateSlot(slotId:String, prescription:String):Observable<any>{
+  public updateSlot(slotId:string, prescription:string):Observable<any>{
     return this.http.put<any>(`${this.baseUrl}/slot/update-slot/${slotId}`,prescription);
+  }
+
+  public getSlotListByUserId(userId:number):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/slot/get-slot-list-by-user-id/${userId}`);
   }
 }

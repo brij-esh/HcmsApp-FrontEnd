@@ -46,4 +46,8 @@ export class DoctorService {
   public loginDoctorFromRemote(doctorData:Doctor):Observable<Doctor>{
     return this.http.post<Doctor>(`${this.baseUrl}/doctor/login`,doctorData)
   }
+
+  public getDoctorById(doctorId:any):Observable<Doctor>{
+    return this.http.get<Doctor>(`${this.baseUrl}/doctor/get-doctor/${doctorId}`)
+  }
 }

@@ -1,0 +1,80 @@
+<div class="container text-center">
+    <mat-card>
+        <div class="text-center">
+
+            <h2>Sign up here!!</h2>
+            <form class="example-form " (ngSubmit)="onFormSubmit()">
+                
+                
+          <table class="example-full-width" cellspacing="0">
+              <tr>
+                  <td>
+                    <mat-form-field appearance="fill">
+                    <mat-label>First name</mat-label>
+                    <input [(ngModel)]="user.userFirstName" name="userFirstName" matInput required placeholder="Enter First Name">
+                  </mat-form-field>
+                </td>
+                  <td>
+                    <mat-form-field appearance="fill">
+                    <mat-label>Last Name</mat-label>
+                    <input [(ngModel)]="user.userLastName" name="userLastName" matInput required placeholder="Enter last Name">
+                  </mat-form-field>
+                </td>
+              </tr>
+           </table>
+              
+           <p>
+               <mat-form-field class="example-full-width" appearance="fill">
+                   <mat-label>Age</mat-label>
+                   <input type="number"  [(ngModel)]="user.userAge" name="userAge" 
+                   matInput placeholder="Enter your age ">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Phone Number</mat-label>
+                    <input type="text" 
+                    [(ngModel)]="user.userPhone"
+                    name="userPhone"
+                    matInput minlength="10" maxlength="10" required placeholder="Enter Phone">
+                </mat-form-field>
+            </p>
+            
+            <table class="example-full-width" cellspacing="0"><tr>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Email Address</mat-label>
+                    <input type="email"
+                    [(ngModel)]="user.userEmailId"
+                    name="userEmailId"
+                    matInput placeholder="Ex. temp@email.com" required>
+                </mat-form-field></td>
+                
+            </tr></table>
+            
+            <table class="example-full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Password</mat-label>
+                            <input type="password" 
+                            [(ngModel)]="user.password"
+                            name="password"
+                            matInput placeholder="password should be at least 8 characters long" minlength="8" maxlength="15" required>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field>
+                            <mat-label>Confirm Password</mat-label>
+                            <input type="password" matInput placeholder="type the same password as above" minlength="8" maxlength="15" required>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+            <div class="submit-button">
+                <button mat-raised-button color="accent">Submit</button>
+            </div>
+            
+            
+            <span class="me-2">Already have an Account</span><a routerLink="/user-login"> Login </a>
+        </form>
+    </div>
+    </mat-card>
+</div>

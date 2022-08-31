@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 export class AddPharmacyComponent implements OnInit {
 
   pharmacyList!:any;
+  public pharmacy:Pharmacy = new Pharmacy();
   constructor(public dialogRef: MatDialogRef<AddPharmacyComponent>,
     private pharmacyService:PharmacyService,
     ) {
@@ -20,7 +21,6 @@ export class AddPharmacyComponent implements OnInit {
     this.getPharmacyList();
    }
 
-  public pharmacy:Pharmacy = new Pharmacy();
 
   ngOnInit(): void {
   }

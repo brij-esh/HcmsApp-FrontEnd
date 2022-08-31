@@ -8,6 +8,7 @@ mat-toolbar{
     background-color: teal;
     border-bottom: 2px solid white;
     color: white;
+    top: 0;
 }
 .mat-icon-button{
     font-size: 2rem;

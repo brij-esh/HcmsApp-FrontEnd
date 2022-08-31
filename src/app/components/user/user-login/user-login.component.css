@@ -1,0 +1,9 @@
+.example-full-width
+{
+    width: 60%;
+}
+mat-card
+{
+    margin-top: 5%;
+    text-align: center;
+}

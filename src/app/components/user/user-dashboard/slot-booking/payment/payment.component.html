@@ -1,0 +1,52 @@
+<div>
+    <form #payForm="ngForm" (ngSubmit)="onPay(payForm)">
+        <div class="form-group">
+          <label>Person Name</label>
+          <input required type="text" class="form-control" id="cardHolderName" [(ngModel)]="payment.cardHolderName"
+              #cardHolderName="ngModel" name="cardHolderName" placeholder="Enter Person Name"
+              [class.is-invalid]="cardHolderName.invalid && cardHolderName.touched">
+          <div *ngIf="cardHolderName.errors &&  (cardHolderName.invalid && cardHolderName.touched)">
+              <span class="text-danger" *ngIf="cardHolderName.errors['required']">CardHolder Name is required</span>
+          </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Card Type</label>
+        <select required class="form-control" ngModel="Select Card Type" name="cardType"
+              placeholder="Select Card Type">
+              <option>Select Card Type</option>
+              <option>Debit Card</option>
+              <option>Credit Card</option>
+        </select>
+    </div>
+  
+          <div class="form-group">
+                <label>Card Number</label><br>
+                <input required type="text" id="cardNo"  name="cardNo" class="form-control" [(ngModel)]="payment.cardNo" #cardNo="ngModel"
+                  placeholder="8888-8888-8888" 
+                  [class.is-invalid]="cardNo.invalid && cardNo.touched">
+                <div *ngIf="cardNo.errors &&  (cardNo.invalid && cardNo.touched)">
+                  <span class="text-danger" *ngIf="cardNo.errors['required']">card Number is required</span>
+                </div>
+          </div>
+  
+          <div class="form-group">
+              <label>Expiry</label><br>
+              <input required type="text" id="expiry"  name="expiry" class="form-control" [(ngModel)]="payment.expiry" #expiry="ngModel"
+                placeholder="MM/YY" 
+                [class.is-invalid]="expiry.invalid && expiry.touched">
+              <div *ngIf="expiry.errors &&  (expiry.invalid && expiry.touched)">
+                <span class="text-danger" *ngIf="expiry.errors['required']">Expiry is required</span>
+              </div>
+        </div>
+  
+        <div class="form-group">
+          <label>CVV</label><br>
+          <input required type="password" id="cvv" name="cvv" class="form-control" [(ngModel)]="payment.cvv" #cvv="ngModel" placeholder="***"  [class.is-invalid]="cvv.invalid && cvv.touched">
+          <div *ngIf="cvv.errors &&  (cvv.invalid && cvv.touched)">
+              <span class="text-danger" [class.d-none]="cvv.valid || cvv.untouched">CVV is required</span>
+            </div>
+      </div>
+      <button [disabled]="payForm.invalid" class="btn btn-info" id="btn" type="submit">Pay</button>   
+      </form>
+</div>

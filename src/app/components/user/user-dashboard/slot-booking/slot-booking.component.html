@@ -1,0 +1,55 @@
+<div class="container">
+    <div mat-dialog-title class="text-center">Enter Pharmacy Details</div>
+    <mat-grid-list cols="2">
+        <form action="" (ngSubmit)="onBook()" >
+            <div class="form-parent">
+                <div class="form-child">
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>SlotId is auto-generated</mat-label>
+                            <input disabled matInput type="text" name="pharmacyId">
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Patient Name</mat-label>
+                            <input matInput type="text" name="patientName" placeholder="Enter Patient Name" required [(ngModel)]="slot.patientName">
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Patient Age</mat-label>
+                            <input matInput type="number" name="patientAge" placeholder="Enter Patient Age" required [(ngModel)]="slot.patientAge">
+                        </mat-form-field>
+                    </p>
+                </div>
+                <div class="form-child">
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Patient Phone</mat-label>
+                            <input matInput type="text" name="patientPhone" (keydown)="isNumber($event)" placeholder="Enter Patient Phone" required [(ngModel)]="slot.patientPhone">
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Slot Date</mat-label>
+                            <input matInput type="date" name="slotDate" placeholder="Enter Choose date" required [(ngModel)]="slot.slotDate">
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Symptoms</mat-label>
+                            
+                            <textarea matInput type="text" name="symptoms" placeholder="Please Enter some symptoms" [(ngModel)]="slot.symptoms"></textarea>
+                        </mat-form-field>
+                    </p>
+                </div>
+            </div>
+            <div class="container text-center">
+                <button mat-raised-button matDialogClose type="submit">Book</button>
+                <button mat-raised-button matDialogClose color="accent">Cancel</button>
+            </div>
+        </form>
+        <!-- {{pharmacy | json}} -->
+    </mat-grid-list>
+</div>

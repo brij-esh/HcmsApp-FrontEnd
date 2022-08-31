@@ -1,0 +1,26 @@
+
+.example-form {
+    min-width: 150px;
+    max-width: 412px;
+    width: 100%;
+    margin:auto;
+  }
+.example-full-width {
+    width: 100%;
+  }
+  
+  td {
+    padding-right: 8px;
+  }
+  .center-class
+  {
+    text-align: center;
+  }
+  .submit-button
+  {
+    width: 100%;
+    text-align: center;
+  }
+  button{
+    min-width: 300px;
+  }

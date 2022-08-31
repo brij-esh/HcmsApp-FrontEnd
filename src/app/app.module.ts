@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatNativeDateModule} from '@angular/material/core';
 import { DatePipe } from '@angular/common';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -42,6 +43,13 @@ import { ViewPharmacyComponent } from './components/admin-dashboard/pharmacy/vie
 import { ViewSlotComponent } from './components/admin-dashboard/view-slot/view-slot.component';
 import { ViewPrescriptionComponent } from './components/patient-login/view-prescription/view-prescription.component';
 import { DoctorDashboardComponent } from './components/doctor-dashboard/doctor-dashboard.component';
+import { UserLoginComponent } from './components/user/user-login/user-login.component';
+import { UserSignupComponent } from './components/user/user-signup/user-signup.component';
+import { UserDashboardComponent } from './components/user/user-dashboard/user-dashboard.component';
+import { SlotBookingComponent } from './components/user/user-dashboard/slot-booking/slot-booking.component';
+import { PaymentComponent } from './components/user/user-dashboard/slot-booking/payment/payment.component';
+
+
 
 @NgModule({
   declarations: [
@@ -64,7 +72,12 @@ import { DoctorDashboardComponent } from './components/doctor-dashboard/doctor-d
     ViewPharmacyComponent,
     ViewSlotComponent,
     ViewPrescriptionComponent,
-    DoctorDashboardComponent
+    DoctorDashboardComponent,
+    UserLoginComponent,
+    UserSignupComponent,
+    UserDashboardComponent,
+    SlotBookingComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,7 +98,8 @@ import { DoctorDashboardComponent } from './components/doctor-dashboard/doctor-d
     MatTableModule,
     MatIconModule,
     MatNativeDateModule,
-    DatePipe
+    DatePipe,
+    Ng2SearchPipeModule
 
   ],
   providers: [DatePipe],

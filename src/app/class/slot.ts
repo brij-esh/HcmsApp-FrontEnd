@@ -8,6 +8,7 @@ export class Slot {
     doctorId!:string;
     prescription!:string;
     symptoms!:string;
-
+    user!:any;
+    doctor!:any;
 
 }
