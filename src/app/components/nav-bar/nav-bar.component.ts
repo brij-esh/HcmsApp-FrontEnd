@@ -18,9 +18,13 @@ export class NavBarComponent implements OnInit {
   }
 
 
+  go(){
+    this.router.navigate(['/']);
+  }
   logout(){
     this.adminService.isLogin = true;
     console.log(this.adminService.isLogin);
+    this.go();
     
   }
   login(){
