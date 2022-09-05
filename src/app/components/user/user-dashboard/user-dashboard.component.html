@@ -7,7 +7,7 @@
         </mat-form-field>
     </div>
     <div class="container text-center">
-        <mat-grid-list cols="3" rowHeight="1:1.5">
+        <mat-grid-list cols="3" rowHeight="1:1.2">
             <mat-grid-tile *ngFor="let doctor of doctorList | filter:term">
                 <mat-card style="background-color:aquamarine;">
                     <div>
@@ -26,7 +26,7 @@
         </mat-grid-list>
     </div>
 
-    <div class="container slots mt50" *ngIf="slotList!=null">
+    <div class="container slots" *ngIf="slotList!=null">
         <h1 class="text-center">Booked Slots</h1>
         <table mat-table [dataSource]="slotList" class="mat-elevation-z8" aria-labelledby>
             <ng-container matColumnDef="slotId">

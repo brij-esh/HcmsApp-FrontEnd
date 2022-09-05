@@ -4,6 +4,9 @@ import { SlotService } from 'src/app/services/slot.service';
 import { UserService } from 'src/app/services/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { SlotBookingComponent } from './slot-booking/slot-booking.component';
+import { AdminService } from 'src/app/services/admin.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -22,7 +25,9 @@ export class UserDashboardComponent implements OnInit {
   constructor(private userService:UserService,
     private slotService:SlotService,
     private doctorService:DoctorService,
-    private matDialog:MatDialog
+    private matDialog:MatDialog,
+    private adminService:AdminService,
+    private router:Router
     ) { 
       this.userEmailId = this.userService.getUserEmailId();
       this.getUserId();
@@ -31,6 +36,17 @@ export class UserDashboardComponent implements OnInit {
 
  
   ngOnInit(): void {
+    this.adminService.isVisible = true;
+    if(this.adminService.isLogin==true){
+      window.stop();
+      this.go();
+    }
+  }
+
+
+  go(){
+    this.router.navigate(['/home']);
+    Swal.fire("Logged Out!","You were logged out, Please login again. Thank You", 'warning');
   }
 
   book(id:any):void{

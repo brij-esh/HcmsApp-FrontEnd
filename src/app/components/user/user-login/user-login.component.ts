@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/class/user';
+import { AdminService } from 'src/app/services/admin.service';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
@@ -14,7 +15,7 @@ export class UserLoginComponent implements OnInit {
 
 
   user:User = new User();
-  constructor(public userService: UserService, public router: Router) { }
+  constructor(public userService: UserService, public router: Router, private adminService:AdminService) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +28,7 @@ export class UserLoginComponent implements OnInit {
       this.userService.loginUser(this.user).subscribe(
         (data: any) => {
           this.router.navigate(['/user-dashboard']);
+          this.adminService.isLogin = false;
           Swal.fire('success',
             'Successfully Logged In',
             'success',

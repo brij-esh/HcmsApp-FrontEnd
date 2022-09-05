@@ -46,6 +46,7 @@ import { UserSignupComponent } from './components/user/user-signup/user-signup.c
 import { UserDashboardComponent } from './components/user/user-dashboard/user-dashboard.component';
 import { SlotBookingComponent } from './components/user/user-dashboard/slot-booking/slot-booking.component';
 import { PaymentComponent } from './components/user/user-dashboard/slot-booking/payment/payment.component';
+import { PharmacyDashboardComponent } from './components/pharmacy-dashboard/pharmacy-dashboard.component';
 
 
 
@@ -74,6 +75,7 @@ import { PaymentComponent } from './components/user/user-dashboard/slot-booking/
     UserDashboardComponent,
     SlotBookingComponent,
     PaymentComponent,
+    PharmacyDashboardComponent,
   ],
   imports: [
     BrowserModule,

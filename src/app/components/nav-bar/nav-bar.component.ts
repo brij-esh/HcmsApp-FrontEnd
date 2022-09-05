@@ -10,7 +10,6 @@ import { AdminService } from 'src/app/services/admin.service';
 export class NavBarComponent implements OnInit {
 
   isVisible!:boolean;
-  isLog!:boolean;
   constructor(public adminService:AdminService,
     private router:Router
     ) { }
@@ -18,20 +17,15 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  go(){
-    this.router.navigate(['/admin-login']);
-  }
 
-  login(){
-      this.isLog = true;
-      return this.isLog;
-  }
   logout(){
-    this.isLog = false;
-    window.localStorage.clear();
-    this.go();
-    console.log(this.isLog);
-    return this.isLog;
+    this.adminService.isLogin = true;
+    console.log(this.adminService.isLogin);
+    
+  }
+  login(){
+    this.adminService.isLogin = false;
+    console.log(this.adminService.isLogin);
   }
 
 }

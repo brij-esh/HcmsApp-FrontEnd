@@ -12,10 +12,10 @@ import Swal from 'sweetalert2';
 export class AdminLoginComponent implements OnInit {
 
   admin:Admin = new Admin();
-  constructor(public adminservice:AdminService, private router:Router) { }
+  constructor(public adminService:AdminService, private router:Router) { }
 
   ngOnInit(): void {
-    this.adminservice.isVisible = false;
+    this.adminService.isVisible = false;
   }
   
   go(){
@@ -23,16 +23,14 @@ export class AdminLoginComponent implements OnInit {
   }
   adminLogin(){
     console.log(this.admin);
-    
-    this.adminservice.adminLoginFromRemote(this.admin).subscribe(
+    this.adminService.adminLoginFromRemote(this.admin).subscribe(
       data=>{
-        console.log("response recieved");
-        // alert("Successfully loggedin");
+        console.log("response received");
+        this.adminService.isLogin = false;
         this.go();
-        this.adminservice.isLogin = true;
       },
       error=>{
-        console.log("Exception occured");
+        console.log("Exception occurred");
         Swal.fire('Wrong credentials!','Please enter valid credentials','warning');
       }
     )

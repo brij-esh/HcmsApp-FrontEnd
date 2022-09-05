@@ -1,0 +1,42 @@
+.image{
+    width: 80%;
+}
+.mat-grid-list .mat-grid-tile .form{
+    background-color: white;
+    width: 70%;
+    border-radius: 50px;
+    padding: 10px;
+}
+.mat-grid-list{
+    text-align: center;
+    background-color: teal;
+}
+button{
+    background-color: teal;
+    color: white;
+    margin: 0 10px;
+}
+.flex-row{
+    display: flex;
+    flex-direction: column!important;
+    justify-content: center;
+    align-items: center;
+}
+.right-child{
+    background-color: white;
+    width: 60%;
+    height: 70%;
+    border-radius: 20px;
+}
+p{
+    margin-top: 20px;
+}
+.right-child h1{
+    color: teal;
+}
+h1{
+    color: white;
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: 500;
+}

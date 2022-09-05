@@ -27,10 +27,11 @@ export class DoctorLoginComponent implements OnInit {
     this.router.navigate(['/doctor-dashboard']);
   }
   
-  loginDoctor(){
+  public loginDoctor(){
     this.doctorService.loginDoctorFromRemote(this.doctor).subscribe(
       (data)=>{
         console.log("response recieved");
+        this.adminService.isLogin = false;
         this.go();
       },
       (error)=>{
