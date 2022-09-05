@@ -15,7 +15,7 @@ import { SlotBookingComponent } from './components/user/user-dashboard/slot-book
 import { PharmacyDashboardComponent } from './components/pharmacy-dashboard/pharmacy-dashboard.component';
 
 const routes: Routes = [
-  { path:'home', component:HomeComponent, pathMatch:'full' },
+  { path:'', component:HomeComponent, pathMatch:'full' },
   { path:'admin-login', component:AdminLoginComponent },
   { path:'admin-dashboard', component:AdminDashboardComponent },
   { path:'doctor-login', component:DoctorLoginComponent},

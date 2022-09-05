@@ -29,7 +29,6 @@ export class PharmacyDashboardComponent implements OnInit {
     }
   }
 
-
   go(){
     this.router.navigate(['/home']);
     Swal.fire("Logged Out!","You were logged out, Please login again. Thank You", 'warning');

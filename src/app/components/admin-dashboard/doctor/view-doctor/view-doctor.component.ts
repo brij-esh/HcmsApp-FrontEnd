@@ -13,7 +13,7 @@ export class ViewDoctorComponent implements OnInit {
 
  
 
-  displayedColumns:string[]=['doctorId','doctorName','specialization','doctorPhone','doctorEmail'];
+  displayedColumns:string[]=['doctorId','doctorName','specialization','doctorPhone','doctorEmail','doctorImageUrl'];
   dataSource:any;
   constructor(
     public dialog:MatDialog,

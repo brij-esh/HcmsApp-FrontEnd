@@ -4,6 +4,7 @@ import { Slot } from 'src/app/class/slot';
 import { DoctorService } from 'src/app/services/doctor.service';
 import { SlotService } from 'src/app/services/slot.service';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
 import { PaymentComponent } from './payment/payment.component';
 
 @Component({
@@ -55,6 +56,13 @@ export class SlotBookingComponent implements OnInit {
 		} 
   }
   onBook(){
+    if(this.slot.patientName=='' || this.slot.patientName == null ||
+    this.slot.patientAge==null || this.slot.patientPhone == null ||
+    this.slot.slotDate == null || this.slot.symptoms==null ||
+    this.slot.symptoms == ''
+    ){
+      Swal.fire("Empty fields","Please fill all required fields",'info');
+    }
     console.log(this.slot);
     this.matDialog.open(PaymentComponent,{
       width:'30%',
@@ -64,18 +72,6 @@ export class SlotBookingComponent implements OnInit {
         }
     })
   }
-
-  // onPay(){
-  //   console.log(this.slot);
-  //   this.slotService.createSlot(this.slot).subscribe(
-  //     (data)=>{
-  //       console.log(data);
-  //     },
-  //     (error)=>{
-  //       console.log(error);
-  //     }
-  //   )
-  // }
   
 
 }

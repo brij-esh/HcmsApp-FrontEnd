@@ -1,8 +1,8 @@
 export class Payment {
-  cardHolderName!: String;
-  cardType!: String;
-  cardNo!: String;
+  cardHolderName!: string;
+  cardType!: string;
+  cardNo!: string;
   cvv!: number;
-  expiry!: String;
+  expiry!: Date;
   fees = 400;
 }
