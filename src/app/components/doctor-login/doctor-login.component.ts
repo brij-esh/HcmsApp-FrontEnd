@@ -30,12 +30,12 @@ export class DoctorLoginComponent implements OnInit {
   public loginDoctor(){
     this.doctorService.loginDoctorFromRemote(this.doctor).subscribe(
       (data)=>{
-        console.log("response recieved");
+        console.log("response received");
         this.adminService.isLogin = false;
         this.go();
       },
       (error)=>{
-        console.log("Exception occured");
+        console.log("Exception occurred");
         this.msg = "Bad credentials, please enter valid DoctorId and password";
         
       }

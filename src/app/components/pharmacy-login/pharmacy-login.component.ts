@@ -28,12 +28,12 @@ export class PharmacyLoginComponent implements OnInit {
     
     this.pharmacyService.pharmacyLogin(this.pharmacy).subscribe(
       data=>{
-        console.log("response recieved");
+        console.log("response received");
         this.go();
         this.adminService.isLogin = false;
       },
       error=>{
-        console.log("Exception occured");
+        console.log("Exception occurred");
         Swal.fire('Wrong credentials!','Please enter valid credentials','warning');
       }
     )
