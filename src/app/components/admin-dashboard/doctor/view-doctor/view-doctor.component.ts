@@ -13,7 +13,7 @@ export class ViewDoctorComponent implements OnInit {
 
  
 
-  displayedColumns:string[]=['doctorId','doctorName','specialization','doctorPhone','doctorEmail','doctorImageUrl'];
+  displayedColumns:string[]=['doctorId','doctorName','specialization','doctorPhone','doctorEmail','doctorAddress','slotSize', 'doctorImageUrl'];
   doctorList:any;
   constructor(
     public dialog:MatDialog,
@@ -21,29 +21,37 @@ export class ViewDoctorComponent implements OnInit {
     public adminService:AdminService
     ) { 
       this.getDoctorList();
-    }
-
-    getDoctorList(){
-      this.doctorService.getDoctorList().subscribe(
-        (data)=>{
-          console.log(data);
-          this.doctorList = data;
-        },
-        (error)=>{
-          console.log(error);
-          
-        }
-      )
+      this.adminService.isVisible = true;
     }
 
   ngOnInit(): void {
-    this.adminService.isVisible = true;
+    this.getDoctorList();
   }
   addDoctor():void{
     this.dialog.open(AddDoctorComponent,{
       width:'50%',
       height:'60%'
-    })
+    }).afterClosed().subscribe(
+      (result)=>{
+        this.ngOnInit();
+      },
+      (error)=>{
+        console.log(error);
+        
+      }
+    )
+  }
+
+  getDoctorList(){
+    this.doctorService.getDoctorList().subscribe(
+      (data)=>{
+        this.doctorList = data;
+      },
+      (error)=>{
+        console.log(error);
+        
+      }
+    )
   }
 
 }

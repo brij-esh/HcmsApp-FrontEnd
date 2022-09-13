@@ -37,6 +37,8 @@ export class UpdateDoctorComponent implements OnInit {
 
     public doctor:Doctor = new Doctor();
   ngOnInit(): void {
+    // TODO document why this method 'ngOnInit' is empty
+  
   }
 
   isNumber(event:any){
@@ -68,7 +70,6 @@ export class UpdateDoctorComponent implements OnInit {
       if(doc.doctorId==this.doctor.doctorId){
         this.doctorService.updateDoctor(this.doctor).subscribe(
           data=>{
-            console.log(data);
             Swal.fire({
               title: 'Are you sure?',
               text: "You won't be able to revert this!",

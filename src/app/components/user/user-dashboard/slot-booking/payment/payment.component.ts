@@ -32,7 +32,6 @@ export class PaymentComponent implements OnInit {
   book(){
     this.slotService.createSlot(this.slot).subscribe(
       (data)=>{
-        console.log(data);
         Swal.fire("Payment Done!","Your Slot is booked successfully",'success');
       },
       (error)=>{
@@ -44,7 +43,6 @@ export class PaymentComponent implements OnInit {
   public onPay(payForm: NgForm): void {
     this.paymentService.createPayment(payForm.value).subscribe(
      (response: Payment)=>{
-       console.log(response);
        this.book();
      },
      (error: HttpErrorResponse)=>{

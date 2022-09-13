@@ -69,7 +69,6 @@ export class AddPharmacyComponent implements OnInit {
 
     this.pharmacyService.addPharmacy(this.pharmacy).subscribe(
       data=>{
-        console.log(data);
         Swal.fire('Success!','Pharmacy Details Saved. Please refer pharmacy list for pharmacy id','success');
         
       },

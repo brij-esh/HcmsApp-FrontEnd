@@ -16,8 +16,6 @@ export class DoctorService {
     this.getDoctorList().subscribe(
       (data)=>{
         this.doctorList = data;
-        console.log(data);
-        
       },
       (error)=>{
         console.log(error);
@@ -30,6 +28,9 @@ export class DoctorService {
     return this.http.get(`${this.baseUrl}/doctor/get-doctor-list`);
   }
 
+  public getSlotSize(doctorId:string):Observable<number>{
+    return this.http.get<number>(`${this.baseUrl}/doctor/get-slot-size/${doctorId}`);
+  }
 
   public addDoctor(doctor:any){
     return this.http.post(`${this.baseUrl}/doctor/`,doctor);

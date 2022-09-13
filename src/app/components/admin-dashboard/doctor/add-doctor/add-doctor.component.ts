@@ -26,6 +26,7 @@ export class AddDoctorComponent implements OnInit {
     public doctor :Doctor =  new Doctor();
   ngOnInit(): void {
     this.getDoctorList();
+    
   }
 
 
@@ -42,7 +43,6 @@ export class AddDoctorComponent implements OnInit {
     )
   }
   isNumber(event:any){
-    const keyCode = event.keyCode;
     if (( (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57)) && (event.keyCode < 96 || event.keyCode > 105)) && event.keyCode !=8) {
 			event.preventDefault();
 		} 
@@ -73,7 +73,6 @@ export class AddDoctorComponent implements OnInit {
     }
     this.doctorService.addDoctor(this.doctor).subscribe(
       data=>{
-        console.log(data);
         Swal.fire('Success!',`${this.doctor.doctorName}'s details saved. For doctor id please refer to doctor list.`,'success',);
         
       },

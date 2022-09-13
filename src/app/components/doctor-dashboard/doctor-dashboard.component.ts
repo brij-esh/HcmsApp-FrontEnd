@@ -22,14 +22,13 @@ export class DoctorDashboardComponent implements OnInit {
     private doctorService:DoctorService
     ) {
       this.doctorId = this.doctorService.doctorId;
-      console.log(this.doctorId);
       
     }
 
   ngOnInit(): void {
     this.getSlotListByDoctorId(this.doctorId);
     this.adminService.isVisible = true;
-    if(this.adminService.isLogin==true){
+    if(this.adminService.isLogin){
       window.stop();
       this.goto();
     }
@@ -46,13 +45,13 @@ export class DoctorDashboardComponent implements OnInit {
   }
   onUpload(){
     this.slotService.updateSlot(this.slotId,this.prescription);
+    this.ngOnInit();
   }
 
   getSlotListByDoctorId(doctorId:string){
     this.slotService.getSlotListByDoctorId(doctorId).subscribe(
       (data)=>{
         this.slotList = data;
-        console.log(data);
         
       },
       (error)=>{
@@ -62,19 +61,6 @@ export class DoctorDashboardComponent implements OnInit {
     )
   }
 
-  // getSlotList(){
-  //   this.slotService.getSlotList().subscribe(
-  //     (data)=>{
-  //       this.slotList = data;
-  //       console.log(data);
-        
-  //     },
-  //     (error)=>{
-  //       console.log(error);
-        
-  //     }
-  //   )
-  // }
 
   displayStyle  = 'none';
 
@@ -91,7 +77,6 @@ export class DoctorDashboardComponent implements OnInit {
   {
     this.slotService.updateSlot(this.slotId,this.prescription).subscribe(data=>
       {
-        console.log(data);
         alert("Successfully updated");
         this.go();
       })

@@ -15,7 +15,6 @@ export class PharmacyService {
     this.getPharmacyList().subscribe(
       (data)=>{
         this.pharmacyList = data;
-        console.log(data);
         
       },
       (error)=>{

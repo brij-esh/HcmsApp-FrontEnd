@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Slot } from 'src/app/class/slot';
 import { DoctorService } from 'src/app/services/doctor.service';
-import { SlotService } from 'src/app/services/slot.service';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 import { PaymentComponent } from './payment/payment.component';
@@ -15,20 +14,18 @@ import { PaymentComponent } from './payment/payment.component';
 export class SlotBookingComponent implements OnInit {
 
   slot:Slot = new Slot();
+  today:Date = new Date();
   constructor(public matDialogRef:MatDialogRef<SlotBookingComponent>,
     @Inject(MAT_DIALOG_DATA) data:any,
-    private slotService:SlotService,
     private userService:UserService,
     private doctorService:DoctorService,
-    private matDialog:MatDialog
+    private matDialog:MatDialog,
     ) {
     matDialogRef.disableClose = true;
     this.slot.doctorId = data.doctorId;
     this.userService.getUserById(data.userId).subscribe(
       (user)=>{
         this.slot.user = user;
-        console.log(user);
-        
       },
       (error)=>{
         console.log(error);
@@ -37,7 +34,6 @@ export class SlotBookingComponent implements OnInit {
       this.doctorService.getDoctorById(data.doctorId).subscribe(
         (doctor)=>{
           this.slot.doctor = doctor;
-          console.log(doctor);
         },
         (error)=>{
           console.log(error);
@@ -47,10 +43,11 @@ export class SlotBookingComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    
   }
 
+
   isNumber(event:any){
-    const keyCode = event.keyCode;
     if (( (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57)) && (event.keyCode < 96 || event.keyCode > 105)) && event.keyCode !=8) {
 			event.preventDefault();
 		} 

@@ -21,23 +21,30 @@ export class ViewPharmacyComponent implements OnInit {
     private adminService:AdminService
     ) { 
       this.getPharmacyList();
+      this.adminService.isVisible = true;
     }
 
   ngOnInit(): void {
-    this.adminService.isVisible = true;
+    this.getPharmacyList();
   }
 
   addPharmacy():void{
     this.dialog.open(AddPharmacyComponent,{
       width:'50%',
       height:'60%'
-    })
+    }).afterClosed().subscribe(
+      (result)=>{
+        this.ngOnInit();
+      },
+      (error)=>{
+        console.log(error);
+        
+      })
   }
 
   getPharmacyList(){
     this.pharmacyService.getPharmacyList().subscribe(
       (data)=>{
-        console.log(data);
         this.dataSource = data;
       },
       (error)=>{

@@ -22,7 +22,6 @@ export class AdminLoginComponent implements OnInit {
     this.router.navigate(['/admin-dashboard']);
   }
   adminLogin(){
-    console.log(this.admin);
     this.adminService.adminLoginFromRemote(this.admin).subscribe(
       data=>{
         console.log("response received");

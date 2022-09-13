@@ -25,13 +25,11 @@ export class NavBarComponent implements OnInit {
   }
   logout(){
     this.adminService.isLogin = true;
-    console.log(this.adminService.isLogin);
     this.go();
     
   }
   login(){
     this.adminService.isLogin = false;
-    console.log(this.adminService.isLogin);
   }
 
 }

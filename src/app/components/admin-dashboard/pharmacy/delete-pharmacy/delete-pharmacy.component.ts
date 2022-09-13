@@ -27,7 +27,6 @@ export class DeletePharmacyComponent implements OnInit {
   getPharmacyList(){
     this.pharmacyService.getPharmacyList().subscribe(
       (data)=>{
-        console.log(data);
         this.pharmacyList = data;
       },
       (error)=>{
@@ -47,7 +46,6 @@ export class DeletePharmacyComponent implements OnInit {
       if(pharm.pharmacyId==this.pharmacy.pharmacyId){
         this.pharmacyService.deletePharmacy(this.pharmacy.pharmacyId).subscribe(
           (data)=>{
-            console.log(data);
         Swal.fire({
           title: 'Are you sure?',
           text: "You won't be able to revert this!",

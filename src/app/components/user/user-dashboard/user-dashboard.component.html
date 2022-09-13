@@ -1,13 +1,52 @@
-<div class="body">
-    <h1 class="text-center">Patient Dashboard</h1>
-    <div class="form-group text-center mt50">
-        <mat-form-field appearance="outline">
-            <mat-label>Search Doctor</mat-label>
-            <input matInput type="text" [(ngModel)]="term" class="search" placeholder="Search your Doctor" />
-        </mat-form-field>
+<div class="body container">
+    <h1 class="text-center"> Patient Dashboard </h1>
+    <div class="form-group text-center mt20">
+        <mat-grid-list cols="2" rowHeight="4:1">
+            <mat-grid-tile>
+                <div>
+                    <div>
+                        <h2>Search Doctor</h2>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Search Doctor</mat-label>
+                            <input matInput type="text" [(ngModel)]="term" class="search" placeholder="Search your Doctor" />
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <form action="" (ngSubmit)="viewSlot()">
+                    <h2>Check Availability</h2>
+                        <div class="manage-slot">
+                            <div class="mat-btn mr10">
+                                <mat-form-field>
+                                    <mat-label>Choose Doctor</mat-label>
+                                    <mat-select name="doctorId" required [(ngModel)]="doctorId">
+                                        <mat-option *ngFor="let doctor of doctorList" [value]="doctor.doctorId">
+                                            {{ doctor.doctorName }} ({{ doctor.specialization }})
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="mat-btn mr10">
+                                <mat-form-field>
+                                    <mat-label>Choose Date</mat-label>
+                                    <input matInput [matDatepicker]="date" [(ngModel)]="slotDate" name="slotDate" id="dateField" max="2100-12-12" [min]="today" />
+                                    <mat-datepicker-toggle matSuffix [for]="date" ></mat-datepicker-toggle>
+                                    <mat-datepicker #date ></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div class="mat-btn">
+                                <button mat-raised-button color="primary">View Slots</button>
+                            </div>
+                        </div>
+                </form>
+            </mat-grid-tile>
+        </mat-grid-list>
     </div>
     <div class="container text-center">
-        <mat-grid-list cols="3" rowHeight="1:1.2">
+        <mat-grid-list cols="4" rowHeight="1:1.2">
             <mat-grid-tile *ngFor="let doctor of doctorList | filter:term">
                 <mat-card style="background-color:aquamarine;">
                     <div>
@@ -62,6 +101,14 @@
             <ng-container matColumnDef="prescription">
                 <th mat-header-cell *matHeaderCellDef> Prescription </th>
                 <td mat-cell *matCellDef="let slot"> {{slot.prescription}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Action </th>
+                <td mat-cell *matCellDef="let slot"> 
+                    <button mat-raised-button color="primary" (click)="updateSlot(slot.slotId)">Edit</button>
+                    <button mat-raised-button color="warn" (click)="deleteSlot(slot.slotId)">Cancel</button>
+                </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

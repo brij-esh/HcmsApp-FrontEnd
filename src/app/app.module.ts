@@ -47,6 +47,7 @@ import { UserDashboardComponent } from './components/user/user-dashboard/user-da
 import { SlotBookingComponent } from './components/user/user-dashboard/slot-booking/slot-booking.component';
 import { PaymentComponent } from './components/user/user-dashboard/slot-booking/payment/payment.component';
 import { PharmacyDashboardComponent } from './components/pharmacy-dashboard/pharmacy-dashboard.component';
+import { UpdateSlotComponent } from './components/user/user-dashboard/update-slot/update-slot.component';
 
 
 
@@ -76,6 +77,7 @@ import { PharmacyDashboardComponent } from './components/pharmacy-dashboard/phar
     SlotBookingComponent,
     PaymentComponent,
     PharmacyDashboardComponent,
+    UpdateSlotComponent,
   ],
   imports: [
     BrowserModule,

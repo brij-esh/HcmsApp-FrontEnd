@@ -1,9 +1,9 @@
 
 <div class="container">
     <div class="heading text-center mb20 mt30">
-        <h2 class="mb20">List of Pharmacy</h2>
+        <h2 class="mb20" id="mydesc">List of Pharmacy</h2>
     </div>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" aria-describedby="mydesc">
         <!-- Position Column -->
     <ng-container matColumnDef="pharmacyId">
       <th mat-header-cell *matHeaderCellDef>Id </th>

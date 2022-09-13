@@ -31,8 +31,14 @@
                     </p>
                     <p>
                         <mat-form-field appearance="outline">
-                            <mat-label>Image</mat-label>
+                            <mat-label>Doctor Image</mat-label>
                             <input matInput type="text" name="doctorImageUrl" required [(ngModel)]="doctor.doctorImageUrl">
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Doctor Address</mat-label>
+                            <input matInput type="text" name="doctorAddress" required [(ngModel)]="doctor.doctorAddress">
                         </mat-form-field>
                     </p>
                 </div>
@@ -40,13 +46,19 @@
                     <p>
                         <mat-form-field appearance="outline">
                             <mat-label>Doctor Phone</mat-label>
-                            <input matInput type="text" (keydown)="isNumber($event)" name="dcotorPhone" placeholder="Enter doctor Phone" required [(ngModel)]="doctor.doctorPhone">
+                            <input matInput type="text" (keydown)="isNumber($event)" name="doctorPhone" placeholder="Enter doctor Phone" required [(ngModel)]="doctor.doctorPhone">
                         </mat-form-field>
                     </p>
                     <p>
                         <mat-form-field appearance="outline">
                             <mat-label>Doctor Email</mat-label>
-                            <input matInput type="email" name="dcotorEmail" placeholder="Enter doctor Email" required [(ngModel)]="doctor.doctorEmail">
+                            <input matInput type="email" name="doctorEmail" placeholder="Enter doctor Email" required [(ngModel)]="doctor.doctorEmail">
+                        </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Slot size</mat-label>
+                            <input matInput type="number" name="slotSize" placeholder="Enter Slot Size" required [(ngModel)]="doctor.slotSize">
                         </mat-form-field>
                     </p>
                     <p>

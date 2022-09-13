@@ -22,7 +22,6 @@ export class DeleteDoctorComponent implements OnInit {
     this.doctorService.getDoctorList().subscribe(
       (data) => {
         this.doctorList = data;
-        console.log(data);
 
       },
       (error) => {

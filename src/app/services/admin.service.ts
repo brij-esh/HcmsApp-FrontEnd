@@ -15,7 +15,6 @@ export class AdminService {
   constructor(private httpClient:HttpClient) { }
 
   adminLoginFromRemote(admin:Admin):Observable<Admin>{
-    console.log(admin);
     return this.httpClient.post<Admin>(`${this.baseUrl}/admin/login`,admin);
   }
 

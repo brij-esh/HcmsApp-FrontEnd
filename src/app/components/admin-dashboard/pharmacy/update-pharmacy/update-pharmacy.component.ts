@@ -27,7 +27,6 @@ export class UpdatePharmacyComponent implements OnInit {
   getPharmacyList(){
     this.pharmacyService.getPharmacyList().subscribe(
       (data)=>{
-        console.log(data);
         this.pharmacyList = data;
       },
       (error)=>{
@@ -38,7 +37,6 @@ export class UpdatePharmacyComponent implements OnInit {
   }
 
   isNumber(event:any){
-    const keyCode = event.keyCode;
     if (( (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57)) && (event.keyCode < 96 || event.keyCode > 105)) && event.keyCode !=8) {
 			event.preventDefault();
 		} 
@@ -90,6 +88,5 @@ export class UpdatePharmacyComponent implements OnInit {
       }
     }
       Swal.fire("Match not found",'Entered pharmacy id does not exist!','warning');
-    return;
   }
 }

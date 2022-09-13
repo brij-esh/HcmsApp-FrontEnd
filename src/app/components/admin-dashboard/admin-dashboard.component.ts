@@ -1,6 +1,5 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { MatDatepicker } from '@angular/material/datepicker';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Doctor } from 'src/app/class/doctor';
@@ -23,12 +22,15 @@ import { ViewSlotComponent } from './view-slot/view-slot.component';
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css']
 })
-export class AdminDashboardComponent implements OnInit {
 
+export class AdminDashboardComponent implements OnInit {
+  
+  today:Date = new Date();
  
   doctor:Doctor = new Doctor();
   slot:Slot = new Slot();
   doctorList:any;
+  slotSize!:number;
 
   doctorId!:string;
   slotDate!:Date;
@@ -74,13 +76,13 @@ export class AdminDashboardComponent implements OnInit {
 addDoctor(): void {
   this.dialog.open(AddDoctorComponent,{
     width:'50%',
-    height:'60%'
+    height:'80%'
   });
 }
 updateDoctor(): void {
   this.dialog.open(UpdateDoctorComponent,{
     width:'50%',
-    height:'60%'
+    height:'80%'
   });
 }
 deleteDoctor(): void {
@@ -112,24 +114,28 @@ deletePharmacy():void{
 
 // View Slot module---------------------
   viewSlot(){
-    console.log(this.doctorId);
-    console.log(this.slotDate);
-
+    this.doctorService.getSlotSize(this.doctorId).subscribe(
+      (data)=>{
+        this.slotSize = data;
+      },
+      (error)=>{
+        console.log(error);
+      }
+    )
     if(this.doctorId =='' || this.doctorId == null || this.slotDate == null){
       Swal.fire("Empty fields!","Fields must not be empty",'warning');
       return;
     }
-
     console.log(this.datePipe.transform(this.slotDate,"yyyy-MM-dd"));
     this.slotService.getSlotCount(this.doctorId,this.datePipe.transform(this.slotDate,"yyyy-MM-dd")).subscribe(
       (data)=>{
-        console.log(data);
         this.dialog.open(ViewSlotComponent,{
           width:'40%',
           height:'30%',
           data:{
             slotNumber:data,
             doctorId:this.doctorId,
+            slotSize:this.slotSize,
           }
         })
         

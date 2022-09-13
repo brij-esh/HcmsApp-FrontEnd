@@ -9,6 +9,8 @@ mat-toolbar{
     border-bottom: 2px solid white;
     color: white;
     top: 0;
+    position: sticky;
+    z-index: 1000;
 }
 .mat-icon-button{
     font-size: 2rem;

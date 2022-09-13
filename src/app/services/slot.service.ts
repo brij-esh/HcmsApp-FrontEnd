@@ -1,5 +1,5 @@
 
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient  } from '@angular/common/http';
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -26,7 +26,6 @@ export class SlotService {
 
 
   public getSlotCount(doctorId:string,slotDate:any):Observable<number>{
-    console.log(slotDate);
     return this.http.get<number>(`${this.baseUrl}/slot/get-slot-count/${doctorId}?slotDate=${slotDate}`);
   }
 
@@ -53,10 +52,12 @@ export class SlotService {
     return this.http.put<any>(`${this.baseUrl}/slot/${slotId}/doctor/${userId}`,slotId);
   }
 
-
-
   public updateSlot(slotId:string, prescription:string):Observable<any>{
     return this.http.put<any>(`${this.baseUrl}/slot/update-slot/${slotId}`,prescription);
+  }
+
+  public updateSlotByUser(slot:any):Observable<any>{
+    return this.http.put<any>(`${this.baseUrl}/slot/update-slot-by-user`,slot);
   }
 
   public getSlotListByUserId(userId:number):Observable<any>{
@@ -64,6 +65,11 @@ export class SlotService {
   }
 
   public getSlotListByDoctorId(doctorId:any):Observable<any>{
-    return this.http.get<any>(`${this.baseUrl}/slot/get-slot-list-by-doctor-id/${doctorId}`)
+    return this.http.get<any>(`${this.baseUrl}/slot/get-slot-list-by-doctor-id/${doctorId}`);
+  }
+
+  public deleteSlotById(slotId:any){
+    return this.http.delete(`${this.baseUrl}/slot/delete-by-slot-id/${slotId}`,{
+      responseType:'text'});
   }
 }

@@ -38,7 +38,6 @@ export class PharmacyDashboardComponent implements OnInit {
     this.slotService.getSlotList().subscribe(
       (data)=>{
         this.slotList = data;
-        console.log(data);
       },
       (error)=>{
         console.log(error);

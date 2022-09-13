@@ -1,13 +1,13 @@
 <div class="container">
     <div mat-dialog-title class="text-center">Enter PatientDetails</div>
     <mat-grid-list cols="2">
-        <form action="" (ngSubmit)="onBook()" >
+        <form action="" (ngSubmit)="onUpdate()" >
             <div class="form-parent">
                 <div class="form-child">
                     <p>
                         <mat-form-field appearance="outline">
                             <mat-label>SlotId is auto-generated</mat-label>
-                            <input disabled matInput type="text" name="pharmacyId">
+                            <input disabled matInput type="text" name="pharmacyId" [(ngModel)]="slot.slotId">
                         </mat-form-field>
                     </p>
                     <p>
@@ -47,11 +47,8 @@
                     </p>
                 </div>
             </div>
-            <div class="text-center">
-                <p>Click on book button and pay INR 400 only</p>
-            </div>
             <div class="container text-center">
-                <button mat-raised-button matDialogClose type="submit">Book</button>
+                <button mat-raised-button matDialogClose type="submit">Update</button>
                 <button mat-raised-button matDialogClose color="accent">Cancel</button>
             </div>
         </form>

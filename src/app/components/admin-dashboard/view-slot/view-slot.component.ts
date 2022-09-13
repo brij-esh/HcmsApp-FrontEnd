@@ -9,15 +9,11 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class ViewSlotComponent implements OnInit {
 
   constructor(public dialogRef : MatDialogRef<ViewSlotComponent>,
-    @Inject (MAT_DIALOG_DATA) public data:any
+    @Inject (MAT_DIALOG_DATA) public data:any,
     ) { }
     
     ngOnInit(): void {
-      console.log(this.data.slotNumber ," view slots");
-      console.log(this.data.doctorId);
-      
    }
-
 
   
 

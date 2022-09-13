@@ -7,4 +7,5 @@ export class Doctor {
     doctorEmail!:string
     doctorAddress!:string;
     doctorImageUrl!:string;
+    slotSize!:number;
 }

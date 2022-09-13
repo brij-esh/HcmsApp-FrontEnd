@@ -38,7 +38,6 @@ export class UserSignupComponent implements OnInit {
       this.userService.createUser(this.user).subscribe(
         (data)=>
         {
-          console.log(data);
           this.router.navigate(['/user-login'])
           Swal.fire('success',
             'Successfully Registered',

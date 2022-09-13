@@ -2,11 +2,12 @@
     <mat-card>
         <div class="text-center">
 
-            <h2>Sign up here!!</h2>
+            <h2 id="mydesc">Sign up here!!</h2>
             <form class="example-form " (ngSubmit)="onFormSubmit()">
                 
                 
-          <table class="example-full-width" cellspacing="0">
+          <table class="example-full-width" aria-labelledby="mydesc">
+            <th></th>
               <tr>
                   <td>
                     <mat-form-field appearance="fill">
@@ -38,7 +39,9 @@
                 </mat-form-field>
             </p>
             
-            <table class="example-full-width" cellspacing="0"><tr>
+            <table class="example-full-width" aria-labelledby>
+                <th></th>
+                <tr>
                 <td><mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Email Address</mat-label>
                     <input type="email"
@@ -49,7 +52,8 @@
                 
             </tr></table>
             
-            <table class="example-full-width" cellspacing="0">
+            <table class="example-full-width"  aria-labelledby="">
+                <th></th>
                 <tr>
                     <td>
                         <mat-form-field class="example-full-width" appearance="fill">

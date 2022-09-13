@@ -22,7 +22,6 @@ export class UserService {
     return this.http.post(`${this.baseUrl}/user/signup`, user);
   }
   public loginUser(user: any) {
-    console.log(user);
     this.user = user;
     return this.http.post(`${this.baseUrl}/user/login`, user);
   }
@@ -34,4 +33,5 @@ export class UserService {
   public getUserById(userId:any):Observable<User>{
     return this.http.get<User>(`${this.baseUrl}/user/get-user-by-id/${userId}`);
   }
+
 }
