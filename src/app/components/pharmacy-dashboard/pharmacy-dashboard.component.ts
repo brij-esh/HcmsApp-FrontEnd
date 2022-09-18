@@ -23,9 +23,11 @@ export class PharmacyDashboardComponent implements OnInit {
 
    ngOnInit(): void {
     this.adminService.isVisible = true;
-    if(this.adminService.isLogin==true){
+    if(this.adminService.isLogin){
       window.stop();
       this.go();
+      console.log(this.adminService.isLogin);
+      
     }
   }
 

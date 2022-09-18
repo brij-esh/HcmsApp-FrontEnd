@@ -25,8 +25,8 @@ export class AdminLoginComponent implements OnInit {
     this.adminService.adminLoginFromRemote(this.admin).subscribe(
       data=>{
         console.log("response received");
-        this.adminService.isLogin = false;
         this.go();
+        this.adminService.isLogin = false;
       },
       error=>{
         console.log("Exception occurred");

@@ -47,9 +47,10 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.adminService.isVisible = true;
-    if(this.adminService.isLogin==true){
+    if(this.adminService.isLogin){
       window.stop();
       this.go();
+      console.log(this.adminService.isLogin);
     }
   }
 
@@ -58,6 +59,7 @@ export class AdminDashboardComponent implements OnInit {
     this.router.navigate(['/home']);
     Swal.fire("Logged Out!","You were logged out, Please login again. Thank You", 'warning');
   }
+  
   
   getDoctorList(){
     this.doctorService.getDoctorList().subscribe(
