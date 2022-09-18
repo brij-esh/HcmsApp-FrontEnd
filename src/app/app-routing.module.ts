@@ -13,6 +13,7 @@ import { UserSignupComponent } from './components/user/user-signup/user-signup.c
 import { UserDashboardComponent } from './components/user/user-dashboard/user-dashboard.component';
 import { SlotBookingComponent } from './components/user/user-dashboard/slot-booking/slot-booking.component';
 import { PharmacyDashboardComponent } from './components/pharmacy-dashboard/pharmacy-dashboard.component';
+import { RevenueComponent } from './components/admin-dashboard/revenue/revenue.component';
 
 const routes: Routes = [
   { path:'', component:HomeComponent, pathMatch:'full' },
@@ -22,12 +23,14 @@ const routes: Routes = [
   { path:'pharmacy-login', component:PharmacyLoginComponent },
   { path:'view-pharmacy', component:ViewPharmacyComponent},
   { path:'view-doctor', component:ViewDoctorComponent},
+  { path:'revenue', component:RevenueComponent},
   { path:'doctor-dashboard', component:DoctorDashboardComponent},
   { path:'user-login', component:UserLoginComponent},
   { path:'user-signup', component:UserSignupComponent},
   { path:'user-dashboard', component:UserDashboardComponent},
   { path:'slot-booking', component:SlotBookingComponent},
   { path:'pharmacy-dashboard', component:PharmacyDashboardComponent }
+
 ];
 
 @NgModule({

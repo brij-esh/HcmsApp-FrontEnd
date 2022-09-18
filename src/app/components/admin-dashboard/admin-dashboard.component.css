@@ -2,9 +2,17 @@
     height:82.7vh;
     width: 100%;
     position: relative;
+    margin-bottom: 200px;
 }
-mat-grid-list{
-    top: 15%;
+
+.heading{
+    background-color: teal;
+    color: white;
+    width: 30%;
+    height: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+    margin: 2rem auto;
 }
 .mat-card{
     border-radius: 0%;
@@ -26,4 +34,13 @@ h2{
     color: teal;
     font-size: 2rem;
     margin-bottom: 40px;
+}
+.revenue{
+    text-align: center;
+}
+.revenue .mat-btn{
+    margin: 1rem 0 !important;
+}
+.revenue button{
+    background-color:blueviolet;
 }

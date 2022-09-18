@@ -15,4 +15,11 @@ export class PaymentService {
   public createPayment(payment:Payment):Observable<Payment>{
     return this.http.post<Payment>(`${this.baseUrl}/payment/`,payment);
   }
+  public getPaymentList():Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/payment/getPaymentList`)
+  }
+
+  public getPaymentListByDateRange(startDate: any, endDate: any):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/payment/getPaymentListByDateRange?startDate=${startDate}&endDate=${endDate}`);
+  }
 }

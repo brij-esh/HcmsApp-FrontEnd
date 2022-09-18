@@ -1,0 +1,67 @@
+
+<div class="container">
+    <div class="heading text-center mb20 mt30">
+        <h2 class="mb20" id="mydesc">List of Payment</h2>
+    </div>
+    <div class="date mb30">
+        <form action="" #dateForm="ngForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter a date range</mat-label>
+                <mat-date-range-input [rangePicker]="picker">
+                    <input matStartDate placeholder="Start date" name="startDate" [(ngModel)]="startDate">
+                    <input matEndDate placeholder="End date" name="endDate" [(ngModel)]="endDate">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+            <div>
+                <button mat-button (click)="generate()" [disabled]="dateForm.untouched">Generate</button>
+            </div>
+            <div *ngIf="calculated">
+                <h3>Total Revenue Generated between {{sDate}} and {{eDate}} is : {{totalAmount}}</h3>
+            </div>
+        </form>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" aria-describedby="mydesc">
+    <ng-container matColumnDef="sNo">
+      <th mat-header-cell *matHeaderCellDef>S.No.</th>
+      <td mat-cell *matCellDef="let element;let i = index">{{i+1}}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="cardHolderName">
+      <th mat-header-cell *matHeaderCellDef>Card Holder</th>
+      <td mat-cell *matCellDef="let element"> {{element.cardHolderName}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="cardType">
+      <th mat-header-cell *matHeaderCellDef>Card Type</th>
+      <td mat-cell *matCellDef="let element"> {{element.cardType}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cardNo">
+        <th mat-header-cell *matHeaderCellDef>Card No.</th>
+        <td mat-cell *matCellDef="let element"> {{element.cardNo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="expiry">
+        <th mat-header-cell *matHeaderCellDef>Expiry Date</th>
+        <td mat-cell *matCellDef="let element"> {{element.expiry}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Amount</th>
+        <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+    </ng-container>
+    <ng-container matColumnDef="userId">
+        <th mat-header-cell *matHeaderCellDef>Paid by (user id)</th>
+        <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+    </ng-container>
+    <ng-container matColumnDef="paymentDate">
+        <th mat-header-cell *matHeaderCellDef>PaymentDate</th>
+        <td mat-cell *matCellDef="let element"> {{element.paymentDate}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
+  
