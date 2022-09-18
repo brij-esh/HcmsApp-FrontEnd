@@ -4,5 +4,6 @@ export class Payment {
   cardNo!: string;
   cvv!: number;
   expiry!: Date;
-  fees = 400;
+  amount:number=400;
+  userId!:number;
 }

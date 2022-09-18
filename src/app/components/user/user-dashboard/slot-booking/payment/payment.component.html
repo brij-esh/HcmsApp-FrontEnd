@@ -1,10 +1,10 @@
 <div>
-    <h3 class="text-center">Net Payable: {{payment.fees}} INR</h3>
-    <form #payForm="ngForm" (ngSubmit)="onPay(payForm)">
+    <h3 class="text-center">Net Payable: {{payment.amount}} INR</h3>
+    <form #payForm="ngForm" (ngSubmit)="onPay()">
         <div class="form-group mt30">
-          <label>Person Name</label>
+          <label>Card Holder Name</label>
           <input required type="text" class="form-control" id="cardHolderName" [(ngModel)]="payment.cardHolderName"
-              #cardHolderName="ngModel" name="cardHolderName" placeholder="Enter Person Name"
+              #cardHolderName="ngModel" name="cardHolderName" placeholder="Enter card holder name"
               [class.is-invalid]="cardHolderName.invalid && cardHolderName.touched">
           <div *ngIf="cardHolderName.errors &&  (cardHolderName.invalid && cardHolderName.touched)">
               <span class="text-danger" *ngIf="cardHolderName.errors['required']">CardHolder Name is required</span>
@@ -13,8 +13,8 @@
   
       <div class="form-group mt30">
         <label>Card Type</label>
-        <select required class="form-control" ngModel="Select Card Type" name="cardType"
-              placeholder="Select Card Type">
+        <select required class="form-control" name="cardType"
+              placeholder="Select Card Type" [(ngModel)]="payment.cardType">
               <option>Select Card Type</option>
               <option>Debit Card</option>
               <option>Credit Card</option>

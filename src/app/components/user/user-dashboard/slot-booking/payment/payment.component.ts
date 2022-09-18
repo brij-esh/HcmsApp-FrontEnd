@@ -40,8 +40,9 @@ export class PaymentComponent implements OnInit {
       }
     )
   }
-  public onPay(payForm: NgForm): void {
-    this.paymentService.createPayment(payForm.value).subscribe(
+  public onPay(): void {
+    this.payment.userId = this.slot.user.id;
+    this.paymentService.createPayment(this.payment).subscribe(
      (response: Payment)=>{
        this.book();
      },
