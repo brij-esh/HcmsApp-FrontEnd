@@ -22,4 +22,8 @@ export class PaymentService {
   public getPaymentListByDateRange(startDate: any, endDate: any):Observable<any>{
     return this.http.get<any>(`${this.baseUrl}/payment/getPaymentListByDateRange?startDate=${startDate}&endDate=${endDate}`);
   }
+
+  public getPaymentListByDoctorIdAndDateRange(doctorId:string, startDate: any, endDate: any):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/payment/getPaymentListByDoctorIdAndDateRange/${doctorId}?startDate=${startDate}&endDate=${endDate}`);
+  }
 }

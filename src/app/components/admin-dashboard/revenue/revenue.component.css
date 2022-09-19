@@ -6,6 +6,9 @@ h2{
     margin: auto;
     border-radius: 20px;
 }
+.mb20 button{
+    margin-right: 20px;
+}
 button{
     margin: auto;
     background-color: teal;

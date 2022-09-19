@@ -15,10 +15,6 @@ export class PharmacyService {
     this.getPharmacyList().subscribe(
       (data)=>{
         this.pharmacyList = data;
-        
-      },
-      (error)=>{
-        console.log(error);
       }
     )
   }
@@ -31,8 +27,17 @@ export class PharmacyService {
     return this.http.get<Pharmacy>(`${this.baseUrl}/pharmacy/get-pharmacy-list`);
   }
 
-  public getPharmacyList(){
-    return this.http.get(`${this.baseUrl}/pharmacy/get-pharmacy-list`);
+  public getPharmacyList():Observable<any>{
+    return this.http.get(`${this.baseUrl}/pharmacy/get-pharmacy-list`).pipe(
+      (data)=>{
+        return data;
+      },
+      (error)=>{
+        console.log('Error! ', error);
+        
+        return error;
+      }
+    );
   }
 
   public addPharmacy(pharmacy:any){

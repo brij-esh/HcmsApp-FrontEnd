@@ -43,7 +43,7 @@ export class SlotBookingComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    
+    // no use
   }
 
 

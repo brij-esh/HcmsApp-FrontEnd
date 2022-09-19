@@ -35,10 +35,6 @@ export class AddDoctorComponent implements OnInit {
       (data)=>{
         this.doctorList = data;
         
-      },
-      (error)=>{
-        console.log(error);
-        
       }
     )
   }
@@ -74,7 +70,6 @@ export class AddDoctorComponent implements OnInit {
     this.doctorService.addDoctor(this.doctor).subscribe(
       data=>{
         Swal.fire('Success!',`${this.doctor.doctorName}'s details saved. For doctor id please refer to doctor list.`,'success',);
-        
       },
       error=>{
         console.log(error);

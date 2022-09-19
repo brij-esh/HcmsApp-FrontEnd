@@ -3,22 +3,53 @@
     <div class="heading text-center mb20 mt30">
         <h2 class="mb20" id="mydesc">List of Payment</h2>
     </div>
-    <div class="date mb30">
-        <form action="" #dateForm="ngForm">
+    <div class="text-center mb20">
+        <button mat-raised-button color="primary" (click)="dateRange()">Generate By Date Range</button>
+        <button mat-raised-button color="primary" (click)="docAndDateRange()">Generate By Doctor Id And Date Range</button>
+    </div>
+    <div class="date mb30" id="byDateOnly" *ngIf="dateRangeVar">
+        <form action="" #dateForm1="ngForm">
             <mat-form-field appearance="outline">
                 <mat-label>Enter a date range</mat-label>
-                <mat-date-range-input [rangePicker]="picker">
+                <mat-date-range-input [rangePicker]="picker1">
                     <input matStartDate placeholder="Start date" name="startDate" [(ngModel)]="startDate">
                     <input matEndDate placeholder="End date" name="endDate" [(ngModel)]="endDate">
                 </mat-date-range-input>
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-date-range-picker #picker></mat-date-range-picker>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker1></mat-date-range-picker>
             </mat-form-field>
             <div>
-                <button mat-button (click)="generate()" [disabled]="dateForm.untouched">Generate</button>
+                <button mat-button (click)="generateByDateRange()" [disabled]="dateForm1.untouched">Generate</button>
             </div>
             <div *ngIf="calculated">
                 <h3>Total Revenue Generated between {{sDate}} and {{eDate}} is : {{totalAmount}}</h3>
+            </div>
+        </form>
+    </div>
+    <div class="date mb30" id="byDoctorIdAndDate" *ngIf="docAndDateRangeVar">
+        <form action="" #dateForm2="ngForm">
+            <mat-form-field appearance="outline" class="mr30">
+                <mat-label>Choose Doctor</mat-label>
+                <mat-select name="doctorId" required [(ngModel)]="doctorId">
+                    <mat-option *ngFor="let doctor of doctorList" [value]="doctor.doctorId">
+                        {{ doctor.doctorName }} ({{ doctor.specialization }})
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter a date range</mat-label>
+                <mat-date-range-input [rangePicker]="picker2">
+                    <input matStartDate placeholder="Start date" name="startDate" [(ngModel)]="startDate">
+                    <input matEndDate placeholder="End date" name="endDate" [(ngModel)]="endDate">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker2></mat-date-range-picker>
+            </mat-form-field>
+            <div>
+                <button mat-button (click)="generateByDoctorIdAndDateRange()" [disabled]="dateForm2.untouched">Generate</button>
+            </div>
+            <div *ngIf="calculated">
+                <h3>Total Revenue Generated between {{sDate}} and {{eDate}} for {{doctorId}} is : {{totalAmount}}</h3>
             </div>
         </form>
     </div>

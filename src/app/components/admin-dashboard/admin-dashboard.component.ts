@@ -65,10 +65,6 @@ export class AdminDashboardComponent implements OnInit {
     this.doctorService.getDoctorList().subscribe(
       (data)=>{
         this.doctorList = data;
-      },
-      (error)=>{
-        console.log(error);
-        
       }
     )
   }

@@ -6,4 +6,5 @@ export class Payment {
   expiry!: Date;
   amount:number=400;
   userId!:number;
+  doctorId!:string;
 }

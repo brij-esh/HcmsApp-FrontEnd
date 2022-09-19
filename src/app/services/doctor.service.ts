@@ -24,8 +24,12 @@ export class DoctorService {
     )
   }
 
-  public getDoctorList(){
-    return this.http.get(`${this.baseUrl}/doctor/get-doctor-list`);
+  public getDoctorList():Observable<any>{
+    return this.http.get(`${this.baseUrl}/doctor/get-doctor-list`).pipe(
+      (data)=>{
+        return data;
+      }
+    );
   }
 
   public getSlotSize(doctorId:string):Observable<number>{

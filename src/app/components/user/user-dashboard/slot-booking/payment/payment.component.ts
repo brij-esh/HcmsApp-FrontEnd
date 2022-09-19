@@ -27,6 +27,7 @@ export class PaymentComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    // no use
   }
 
   book(){
@@ -42,6 +43,7 @@ export class PaymentComponent implements OnInit {
   }
   public onPay(): void {
     this.payment.userId = this.slot.user.id;
+    this.payment.doctorId = this.slot.doctorId;
     this.paymentService.createPayment(this.payment).subscribe(
      (response: Payment)=>{
        this.book();
