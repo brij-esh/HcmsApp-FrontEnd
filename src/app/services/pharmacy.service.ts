@@ -54,4 +54,5 @@ export class PharmacyService {
       responseType:'text'
     });
   }
+
 }

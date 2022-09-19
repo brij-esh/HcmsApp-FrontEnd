@@ -10,5 +10,6 @@ export class Slot {
     symptoms!:string;
     user!:any;
     doctor!:any;
+    status!:any;
 
 }

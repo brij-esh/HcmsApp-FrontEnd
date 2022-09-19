@@ -60,6 +60,10 @@ export class SlotService {
     return this.http.put<any>(`${this.baseUrl}/slot/update-slot-by-user`,slot);
   }
 
+  public updateSlotStatus(slotId:string, status:boolean):Observable<Slot>{
+    return this.http.put<Slot>(`${this.baseUrl}/slot/updateSlotStatus/${slotId}`,status);
+  }
+
   public getSlotListByUserId(userId:number):Observable<any>{
     return this.http.get<any>(`${this.baseUrl}/slot/get-slot-list-by-user-id/${userId}`);
   }
